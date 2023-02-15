@@ -21,6 +21,7 @@ const app = {
         var temp = document.getElementsByTagName("template")[1];
         console.log(temp);
 
+        
         var clon = temp.content.cloneNode(true);
         document.body.appendChild(clon);
 
