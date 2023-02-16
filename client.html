@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA example</title>
+</head>
+<body>
+
+<!------------------------------------HOME TAMPLATE------------------------------------->
+    <template id="HOME" >
+        <h1> WELCOME TO HOME PAGE</h1>
+        <button onclick="change_page(HOME,REGISTER)"></button>
+    </template>
+<!---------------------------------------REGISTER TAMPLATE------------------------------------->
+    <template id="REGISTER">
+        <div class="form">
+            <h1>SING UP</h1>
+            <p>Username :</p>
+            <input type="text" name="username" placeholder="Username">
+            <p>E-mail :</p>
+            <input type="text" name="e-mail" placeholder="E-mail">
+            <p>Password :</p>
+            <input type="password" name="password" id="pass">    
+            </br></br>
+            <input type="submit" name="signup" value="signup" onclick="jsvascript:register()">
+            <button onclick="change_page(REGISTER,LOGIN)"></button>
+        </div>
+    </template>
+<!---------------------------------------LOGIN TAMPLATE----------------------------------->
+    <template id="LOGIN">
+        <lable for="username" >User name: </lable>&nbsp&nbsp
+        <input id="username" type="text"/>
+        </br>
+        <lable for="password" >Password: </lable>&nbsp&nbsp&nbsp&nbsp
+        <input id="password" type="password"/>
+        </br>
+        <input type="submit" onclick="javascript:login()"></input>
+    </template>
+    <script src="client.js"></script>
+
+</body>
+</html>

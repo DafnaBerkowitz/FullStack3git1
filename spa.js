@@ -16,31 +16,12 @@ const app = {
     nav: function(ev){
         ev.preventDefault();
         let currentPage = ev.target.getAttribute('data-target');
-
-
-        var temp = document.getElementsByTagName("template")[1];
-        console.log(temp);
-
-        
-        var clon = temp.content.cloneNode(true);
-        document.body.appendChild(clon);
-
-        //document.querySelector('.active').classList.remove('active');
-        //document.getElementById(currentPage).classList.add('active');
-        //console.log(currentPage)
+        document.querySelector('.active').classList.remove('active');
+        document.getElementById(currentPage).classList.add('active');
+        console.log(currentPage)
         history.pushState({}, currentPage, `#${currentPage}`);
-        //document.getElementById(currentPage).dispatchEvent(app.show);
-
-
     },
-    pageShown: function(ev){
-        console.log('Page', ev.target.id, 'just shown');
-        let h1 = ev.target.querySelector('h1');
-        h1.classList.add('big')
-        setTimeout((h)=>{
-            h.classList.remove('big');
-        }, 1200, h1);
-    },
+   
     poppin: function(ev){
         console.log(location.hash, 'popstate event');
         let hash = location.hash.replace('#' ,'');
@@ -52,17 +33,4 @@ const app = {
     }
 }
 
-function showContent() {
-    var temp = document.getElementsByTagName("template");
-    var clon = temp.content.cloneNode(true);
-    document.body.appendChild(clon);
-  }
-
 document.addEventListener('DOMContentLoaded', app.init);
-
-
-function showContent() {
-  var temp = document.getElementsByTagName("template")[0];
-  var clon = temp.content.cloneNode(true);
-  document.body.appendChild(clon);
-}
