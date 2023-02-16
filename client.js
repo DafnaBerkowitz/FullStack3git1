@@ -1,6 +1,6 @@
 
 var firstPage=document.getElementById("HOME");
-var clon= firstPage.content.clonNode(true);
+var clon= firstPage.content.cloneNode(true);
 document.body.appendChild(clon);
 
 // The main function. Reference to fill page functions.
@@ -8,7 +8,7 @@ function change_page(old_page,new_page){
     var oldP=document.getElementById(old_page);
     document.body.removeChild(oldP);
     var newP=document.getElementById(new_page);
-    var clon= newP.content.clonNode(true);
+    var clon= newP.content.cloneNode(true);
     document.body.appendChild(clon);
 
     history.replaceState({},old_page,'#'+old_page);
