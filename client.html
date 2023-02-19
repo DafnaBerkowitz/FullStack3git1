@@ -9,13 +9,15 @@
 <body>
 
 <!------------------------------------HOME TAMPLATE------------------------------------->
-    <template id="HOME" >
+    <template id="HOME_TEMPLATE" href="#HOME" >
+      <div id="home_page">
         <h1> WELCOME TO HOME PAGE</h1>
-        <button onclick="change_page('HOME','REGISTER')"></button>
+        <button onclick="change_page( 'home_page','REGISTER_TEMPLATE')">22222</button>
+      </div>
     </template>
 <!---------------------------------------REGISTER TAMPLATE------------------------------------->
-    <template id="REGISTER">
-        <div class="form">
+    <template id="REGISTER_TEMPLATE" href="#REGISTER" >
+        <div id="register_page" class="form">
             <h1>SING UP</h1>
             <p>Username :</p>
             <input type="text" name="username" placeholder="Username">
@@ -39,6 +41,16 @@
         <input type="submit" onclick="javascript:login()"></input>
     </template>
     <script src="client.js"></script>
+
+
+
+<script>
+function showContent() {
+  var firstPage=document.getElementById("HOME");
+  var clon = firstPage.content.cloneNode(true);
+  document.body.appendChild(clon);
+}
+</script>
 
 </body>
 </html>
