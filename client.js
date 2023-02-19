@@ -1,5 +1,5 @@
 
-var firstPage=document.getElementById("HOME");
+var firstPage=document.getElementById("home_template");
 var clon= firstPage.content.cloneNode(true);
 document.body.appendChild(clon);
 
@@ -15,14 +15,17 @@ function change_page(old_page,new_page){
     history.pushState({},new_page,`#${new_page}`);
 }
 
-/*
-poppin: function(ev){
-    //console.log(location.hash, 'popstate event');
+function poppin(ev){
+    console.log(location.hash, 'popstate event');
     let hash = location.hash.replace('#' ,'');
-    var old= document.querySelector('.active').classList.remove('active');
-    document.getElementById(hash).classList.add('active');
-    console.log(hash)
-    //history.pushState({}, currentPage, `#${currentPage}`);
-    document.getElementById(hash).dispatchEvent(app.show);
-}*/
-//window.addEventListener('popstate', app.poppin);
+    hash=hash.replace('page','template');
+
+    var oldP=document.querySelector('.page');
+    document.body.removeChild(oldP);
+
+    var newP= document.getElementById(hash);
+    var clon= newP.content.cloneNode(true);
+    document.body.appendChild(clon); 
+}
+
+window.addEventListener('popstate', poppin);

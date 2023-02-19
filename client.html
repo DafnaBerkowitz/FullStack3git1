@@ -9,15 +9,15 @@
 <body>
 
 <!------------------------------------HOME TAMPLATE------------------------------------->
-    <template id="HOME_TEMPLATE" href="#HOME" >
-      <div id="home_page">
+    <template id="home_template" href="#home_template" >
+      <div id="home_page" class="page">
         <h1> WELCOME TO HOME PAGE</h1>
-        <button onclick="change_page( 'home_page','REGISTER_TEMPLATE')">22222</button>
+        <button onclick="change_page( 'home_page','register_template')">22222</button>
       </div>
     </template>
 <!---------------------------------------REGISTER TAMPLATE------------------------------------->
-    <template id="REGISTER_TEMPLATE" href="#REGISTER" >
-        <div id="register_page" class="form">
+    <template id="register_template" href="#register_template" >
+        <div id="register_page" class="page " class="form">
             <h1>SING UP</h1>
             <p>Username :</p>
             <input type="text" name="username" placeholder="Username">
@@ -27,11 +27,12 @@
             <input type="password" name="password" id="pass">    
             </br></br>
             <input type="submit" name="signup" value="signup" onclick="jsvascript:register()">
-            <button onclick="change_page('REGISTER','LOGIN')"></button>
+            <button onclick="change_page('register_page','login_template')"></button>
         </div>
     </template>
 <!---------------------------------------LOGIN TAMPLATE----------------------------------->
-    <template id="LOGIN">
+    <template id="login_template" href="#login_template" >
+        <div id="login_page" class="page">
         <lable for="username" >User name: </lable>&nbsp&nbsp
         <input id="username" type="text"/>
         </br>
@@ -39,6 +40,9 @@
         <input id="password" type="password"/>
         </br>
         <input type="submit" onclick="javascript:login()"></input>
+        <button onclick="change_page('login_page','home_template')"></button>
+
+    </div>
     </template>
     <script src="client.js"></script>
 
