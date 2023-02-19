@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
     <title>SPA example</title>
 </head>
 <body>
@@ -12,49 +13,73 @@
     <template id="home_template" href="#home_template" >
       <div id="home_page" class="page">
         <h1> WELCOME TO HOME PAGE</h1>
-        <button onclick="change_page( 'home_page','register_template')">22222</button>
+        <button  id = "submit"onclick="change_page( 'home_page','login_template')">כניסת משתמש</button>
+        <button  id = "submit"onclick="change_page( 'home_page','joining_template')">הרשמה</button>
       </div>
     </template>
-<!---------------------------------------REGISTER TAMPLATE------------------------------------->
-    <template id="register_template" href="#register_template" >
-        <div id="register_page" class="page " class="form">
-            <h1>SING UP</h1>
-            <p>Username :</p>
-            <input type="text" name="username" placeholder="Username">
-            <p>E-mail :</p>
-            <input type="text" name="e-mail" placeholder="E-mail">
-            <p>Password :</p>
-            <input type="password" name="password" id="pass">    
-            </br></br>
-            <input type="submit" name="signup" value="signup" onclick="jsvascript:register()">
-            <button onclick="change_page('register_page','login_template')"></button>
+<!---------------------------------------login TAMPLATE------------------------------------->
+    <template id="login_template" href="#login_template" >
+        <div id="login_page" class="page " >
+            <h1>כניסת משתמש</h1>
+
+        <form class="contact" name="myForm" action="home.html" onsubmit="return check()" method="post" autocomplete="on">
+
+            <input id="name" type="text" name="fname" placeholder="שם משתמש" required>
+            <br />
+
+            <input id="password" type="password" name="password" placeholder="סיסמא" required>
+            <br />
+
+            <button  id = "submit"onclick="change_page('loging_page','main_template')">התחבר </button>
+            <br />
+            <button  id = "submit"onclick="change_page('login_page','joining_template')">אין לי חשבון,אני רוצה להירשם</button>
+
+        </form>
+            
         </div>
     </template>
-<!---------------------------------------LOGIN TAMPLATE----------------------------------->
-    <template id="login_template" href="#login_template" >
-        <div id="login_page" class="page">
-        <lable for="username" >User name: </lable>&nbsp&nbsp
-        <input id="username" type="text"/>
-        </br>
-        <lable for="password" >Password: </lable>&nbsp&nbsp&nbsp&nbsp
-        <input id="password" type="password"/>
-        </br>
-        <input type="submit" onclick="javascript:login()"></input>
-        <button onclick="change_page('login_page','home_template')"></button>
+<!---------------------------------------joining TAMPLATE----------------------------------->
+    <template id="joining_template" href="#joining_template" >
+        <div id="joining_page" class="page">
+            <h1>משתמש חדש</h1>
 
+            <form class="Contact" name="myForm" method="post" action="home.html" onsubmit="return myFunction();" autocomplete="on">
+    
+                <input id="name" type="text" name="fname" placeholder="שם מלא" required>
+                <br />
+    
+                <input id="password1" type="password" name="password1" placeholder="סיסמא" required>
+                <br />
+                <input id="password2" type="password" name="password2" placeholder="אימות סיסמא" required>
+                <br />
+    
+                <button  id = "submit"onclick="change_page('joining_page','main_template')" >הרשמה</button>
+                <br />
+    
+                <button id = "submit" onclick="change_page('joining_page','login_template')">יש לי חשבון,אני רוצה להתחבר</button>
+            </form>
+        
     </div>
     </template>
+
+    <!---------------------------------------joining TAMPLATE----------------------------------->
+    <template id="main_template" href="#main_template" >
+        <div id="main_page" class="page">
+            <h1>ברוך הבא</h1>
+            <button  id = "submit" onclick="change_page('main_page','home_template')" >התנתק</button>
+        </div>
+
+
+    </template>
     <script src="client.js"></script>
+    <script src="login.js"></script>
+    <script src="joining.js"></script>
+    
 
 
 
-<script>
-function showContent() {
-  var firstPage=document.getElementById("HOME");
-  var clon = firstPage.content.cloneNode(true);
-  document.body.appendChild(clon);
-}
-</script>
+
+
 
 </body>
 </html>
