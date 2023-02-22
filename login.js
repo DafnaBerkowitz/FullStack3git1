@@ -8,7 +8,8 @@ let stopBlocked;
 function check() {
     let p = document.forms["myForm"]["password"].value;
     let name = document.forms["myForm"]["fname"].value;
-    var user = JSON.parse(localStorage.getItem(name));
+    //var user = JSON.parse(localStorage.getItem(name));
+    user=validation_user_FAJAX(p,name);
 
     /* בדיקה אם משתמש חסום ואפשר לשחרר את החסימה*/
     if (user != null) {
@@ -52,4 +53,34 @@ function check() {
             }
         }
     }
+}
+
+function validation_user_FAJAX(p,name){
+    let fxhttp=new FXMLHttpRequest();
+    let password_ = p;
+    let name_ = name
+    let email_='';
+    const user={
+        name: name_,
+        email: email_,
+        password: password_,
+    }
+
+    fxhttp.open('GET','login_template',true);
+    fxhttp.onload(validation);
+    fxhttp.send('users',JSON.stringify(user));
+
+
+
+}
+function validation(){
+    if(fxhttp.status==404){
+        alert("שם משתמש קיים במערכת, בחר שם אחר");
+    }
+    else{
+
+        //יעביר לדף הבא, 
+        fxhttp.responseText.password===p;
+    }
+    
 }

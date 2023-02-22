@@ -9,16 +9,19 @@ class server{
     }
 
     getRequestFromNet(request){
-        let req= request.split(' ');
-        this.method=req[0];
-        this.url=req[1];
-        this.api=JSON.parse(req[2]);
-        if(req.length===5){
-            this.body=JSON.parse(req[4]);
+        let req=request.split('\n');
+        let head= req[0].split(' ');
+        let body= req[1].split(' ');
+
+        this.method=head[0];
+        this.url=head[1];
+        this.api=head[2];
+        if(this.method==='POST'){
+            this.body=JSON.parse(body[0]);
         }
         let data='';
         switch(this.method){
-            case GET:{
+            case 'GET':{
                 let part=this.api.split('/');
                 if(part.length===2){
                     data= this.db.getData(part[0],part[1]); //users 1
@@ -28,19 +31,22 @@ class server{
                 }
                 break;
             }
-            case POST:{//add new data
-                data =this.db.addData(api,body);
+            case 'POST':{//add new data
+                data =this.db.addData( this.api,this.body);
                 break;
             }
-            case PUT:{//update data
+            case 'PUT':{//update data
                 let part=this.api.split('/');
                 data =this.db.updateData(part[0],part[1],body);
                 break;
             }
-            case DELETE:{//delete data
+            case 'DELETE':{//delete data
                 let part=this.api.split('/');
                 data =this.db.deleteData(part[0],part[1]);
                 break;
+            }
+            default: {
+                alert("ERROR");
             }
         }
         let response='';

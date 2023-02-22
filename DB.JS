@@ -1,28 +1,22 @@
-const user={
-    name: '',
-    email: '',
-    password: '',
-    id: ''
-}
-const counter = (() => {
-    let count = 0;
-    return () => {
-      count++;
-      return count;
-    };
-  })();
-
 class DB{
-    constructor(){}
+    constructor(){    
+    user={
+        name: '',
+        email: '',
+        password: '',
+        id: ''
+    }
+    }
+
 
     getData(list_name,body){
         var List_Name = JSON.parse(localStorage.getItem(list_name)) ?? [];
-        if (List_Name === []) {
+        if (List_Name.length === 0) {
             return false;
            // setFormMessage(document.querySelector("#login"), "error", "this user not exits");
         }
         else {
-            var jUser = List_Name.find(item => item.id === body.id) ?? null;
+            var jUser = List_Name.find(item => item.name === body.name) ?? null;
             if (jUser === null){
                 return false;
                // setFormMessage(document.querySelector("#login"), "error", "this user not exits");
@@ -35,7 +29,7 @@ class DB{
 
     getAllData(list_name){
         var List_Name = JSON.parse(localStorage.getItem(list_name)) ?? [];
-        if(List_Name === []){
+        if(List_Name.length === 0){
             return false;
         }
         else{
@@ -45,21 +39,23 @@ class DB{
 
     addData(list_name,body){ //add users data
         var List_Name = JSON.parse(localStorage.getItem(list_name)) ?? [];
-        if(List_Name === []){
-            const user = {
-                name: body.username,
+        if(List_Name.length === 0){
+
+
+        
+             user = {
+                name: body.name,
                 email: body.email,
-                password: body.pass,
-                id:counter()
+                password: body.password,
+             
             }
         }
         else{
-           if(List_Name.find(item => item.email === body.email) ?? null) {
-             const user = {
-                name: body.username,
+           if(List_Name.find(item => item.name === body.name) ?? null) {
+            user = {
+                name: body.name,
                 email: body.email,
-                password: body.pass,
-                id:counter()
+                password: body.password,
              }
            }
            else{
@@ -75,24 +71,23 @@ class DB{
  
     updateData(list_name,body){//update user
         var List_Name = JSON.parse(localStorage.getItem(list_name)) ?? [];
-        if (List_Name === []) {
+        if (List_Name.length === 0) {
             return false;
            // setFormMessage(document.querySelector("#login"), "error", "this user not exits");
         }
         else {
-            var jUser = List_Name.find(item => item.id === body.id) ?? null;
+            var jUser = List_Name.find(item => item.name === body.name) ?? null;
             if (jUser === null){
                 return false;
                // setFormMessage(document.querySelector("#login"), "error", "this user not exits");
             }
             else{
-                List_Name = List_Name.filter(item => item.id !== id)
+                List_Name = List_Name.filter(item => item.name === body.name)
                 window.localStorage.removeItem(list_name);
-                const user = {
-                    name: body.username,
+                user = {
+                    name: body.name,
                     email: body.email,
-                    password: body.pass,
-                    id: body.id
+                    password: body.password,
                  }
                 List_Name.push(user);
                 window.localStorage.setItem(list_name, JSON.stringify(List_Name));
@@ -104,12 +99,12 @@ class DB{
 
     deleteData(list_name,id){
         var List_Name = JSON.parse(localStorage.getItem(list_name)) ?? [];
-        if (List_Name === []) {
+        if (List_Name.length === 0) {
             return false;
            // setFormMessage(document.querySelector("#login"), "error", "this user not exits");
         }
         else {
-            var jUser = List_Name.find(i => i.id === id) ?? null;
+            var jUser = List_Name.find(item => item.name === body.name) ?? null;
             if (jUser === null){
                 return false;
                // setFormMessage(document.querySelector("#login"), "error", "this user not exits");
@@ -123,4 +118,13 @@ class DB{
         }
     }
     searchData(){}
+
+    
+    counter = (() => {
+        let count = 0;
+        return () => {
+          count++;
+          return count;
+        };
+      })();
 }

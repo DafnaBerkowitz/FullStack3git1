@@ -1,9 +1,9 @@
 class network{
     constructor(){
-        this.server= new Server();
+        this.server= new server();
     }
 
-    sendToNet(request){
+    sendToServer(request){
         let response= this.server.getRequestFromNet(request);
         return response;
     }
