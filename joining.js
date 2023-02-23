@@ -38,3 +38,46 @@ function myFunction() {
         return false;
     }
 }
+
+function validation_user_FAJAX(p1,p2,name){
+    let fxhttp=new FXMLHttpRequest();
+    let password1_ = p1;
+    let password2_ = p2;
+    let name_ = name
+    //let email_='';
+    const user={
+        name: name_,
+       // email: email_,
+        password1: password1_,
+        password2: password2_,
+    }
+}
+
+function validation(p1,p2,name){
+    if(fxhttp.status==404){
+            alert("שם משתמש כבר קיים. בחר שם אחר");
+            return false;
+        }
+        else{
+
+        //יעביר לדף הבא, 
+        if (p1.length >= 6){
+            if(fxhttp.responseText.password1===fxhttp.responseText.password2){
+                user.name=name;
+                user.password1=p1;
+                change_page('joining_page','home_template')
+    
+                
+            }
+            else {
+                alert("שגיאה באימות סיסמא ");
+                return false;
+            }
+        }else {
+            alert("סיסמא צריכה להיות באורך 6 תווים לפחות");
+            return false;
+        }
+        
+    }
+    
+}

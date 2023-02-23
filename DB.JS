@@ -51,7 +51,8 @@ class DB{
             }
         }
         else{
-           if(List_Name.find(item => item.name === body.name) ?? null) {
+           var jUser=List_Name.find(item => item.name === body.name) ?? null;
+           if(jUser===null) {
             user = {
                 name: body.name,
                 email: body.email,
