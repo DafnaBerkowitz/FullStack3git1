@@ -1,0 +1,137 @@
+body{
+    height: auto;
+    width: auto;
+}
+
+#libary_page{
+    font-family: Garamond, Verdana, sans-serif;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+    "n n n n n"
+    "h h h h h"
+    "m c c c c";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 47px 193px 460px;
+    
+    
+}
+
+.libary_header{
+    display: grid;
+    grid-area: h;
+    grid-template-columns: 1fr 4fr 1fr;
+    background-image: linear-gradient(to left, #FFFFFF, #114374, #114374);
+
+}
+
+.libary_header #image{
+    height: 193px;
+}
+
+.libary_header #header {
+    color: white;
+    font-size: 60px;
+    align-self: center;
+
+}
+
+.libary_menubar{
+    grid-area: n;
+    display: grid;
+    grid-template-columns: 130px 130px auto;
+    grid-template-rows: 50px;
+    background-image: linear-gradient(to left, #FFFFFF, #114374, #114374);
+    
+}
+
+.libary_menubar a {
+    margin: 5px;
+    font-weight: bold;
+}
+
+.libary_menubar .icon1{
+    height: 20px;
+    width: 20px;
+  }
+
+   
+.libary_menu_content{
+    display: grid;
+    grid-area: m;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+
+}
+.libary_button {
+    background: rgb(97, 175, 209);
+    color: black;
+    padding: 5px;
+    margin: 4px 4px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.libary_button:hover {
+    background: rgb(158, 209, 231);
+}
+
+.libary_menu_content a{
+    flex-direction: column;
+}
+
+.libary_menu_content h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.libary_menu_content .icon {
+    height: 60px;
+}
+
+.libary_iframe_content{
+    grid-area: c;
+    height: 460px;
+    width: 100%;
+    
+}
+
+.libary_button_up {
+    color: white;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 900px) {
+    .libary_menu_content{
+        grid-template-columns: auto;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+    .header {
+        background-image: linear-gradient(to left, #FFFFFF, #114374, #114374);
+
+    }
+    .libary_header #image{
+        height: 140px;
+        display: block;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    
+    .libary_header #header {
+        color: white;
+        font-size: 50px;
+        align-self: center;
+
+    
+    }
+}
+
+
+   
+

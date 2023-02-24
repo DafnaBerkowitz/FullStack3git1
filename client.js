@@ -28,4 +28,11 @@ function poppin(ev){
     document.body.appendChild(clon); 
 }
 
+function help(){
+   /// const templateContent = document.querySelector('#catalog_template').content;
+    var newP=document.getElementById("catalog_template");
+    var clon= newP.content.cloneNode(true);
+    const iframe = document.querySelector('iframe');
+    iframe.srcdoc = clon;
+}
 window.addEventListener('popstate', poppin);

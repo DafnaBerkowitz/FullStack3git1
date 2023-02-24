@@ -39,21 +39,17 @@ class DB{
 
     addData(list_name,body){ //add users data
         var List_Name = JSON.parse(localStorage.getItem(list_name)) ?? [];
-        if(List_Name.length === 0){
-
-
-        
+        if(List_Name.length === 0){      
              user = {
                 name: body.name,
                 email: body.email,
-                password: body.password,
-             
+                password: body.password,             
             }
         }
         else{
-           var jUser=List_Name.find(item => item.name === body.name) ?? null;
-           if(jUser===null) {
-            user = {
+            var jUser = List_Name.find(item => item.name === body.name) ?? null;
+            if (jUser === null){
+                user = {
                 name: body.name,
                 email: body.email,
                 password: body.password,
