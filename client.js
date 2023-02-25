@@ -33,6 +33,6 @@ function help(){
     var newP=document.getElementById("catalog_template");
     var clon= newP.content.cloneNode(true);
     const iframe = document.querySelector('iframe');
-    iframe.srcdoc = clon;
+    iframe.srcdoc = clon.lastElementChild.innerHTML;
 }
 window.addEventListener('popstate', poppin);
