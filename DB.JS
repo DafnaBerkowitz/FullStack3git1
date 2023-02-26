@@ -31,7 +31,7 @@ class DB {
     addData(list_name, body) { //add users data
         var List_Name = JSON.parse(localStorage.getItem(list_name)) ?? [];
         if (List_Name.length === 0) {
-            user = {
+             user = {
                 name: body.name,
                 password: body.password,
             }
