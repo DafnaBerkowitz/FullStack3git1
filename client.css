@@ -1,0 +1,18 @@
+.libary_header{
+    display: grid;
+    grid-area: h;
+    grid-template-columns: 1fr 4fr 1fr;
+    background-image: linear-gradient(to left, #FFFFFF, #114374, #114374);
+
+}
+
+.libary_header #image{
+    height: 193px;
+}
+
+.libary_header #header {
+    color: white;
+    font-size: 60px;
+    align-self: center;
+
+}

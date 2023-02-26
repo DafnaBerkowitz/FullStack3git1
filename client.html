@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="client.css">
     <link rel="stylesheet" href="libary_design.css">
     <link rel="stylesheet" href="catalog_libary_design.css">
 
@@ -16,16 +17,28 @@
 
     <!------------------------------------HOME TAMPLATE------------------------------------->
     <template id="home_template" href="#home_template">
+
         <div id="home_page" class="page">
+            <div class="libary_header">
+                <img id="image" src="image\libary simbol.jpeg" alt="load page">
+                <h1 id="header">Jerusalem Library</h1>
+                <img id="image" src="image\library_logo.png">
+            </div>
+
             <h1> WELCOME TO HOME PAGE</h1>
             <button id="submit" onclick="change_page( 'home_page','login_template')">כניסת משתמש</button>
             <button id="submit" onclick="change_page( 'home_page','joining_template')">הרשמה</button>
-            <button id="submit" onclick="change_page( 'home_page','libary_template')">ספריה למחוק אחכ</button>
         </div>
     </template>
     <!---------------------------------------login TAMPLATE------------------------------------->
     <template id="login_template" href="#login_template">
         <div id="login_page" class="page ">
+
+            <div class="libary_header">
+                <img id="image" src="image\libary simbol.jpeg" alt="load page">
+                <h1 id="header">Jerusalem Library</h1>
+                <img id="image" src="image\library_logo.png">
+            </div> 
             <h1>כניסת משתמש</h1>
 
             <form class="contact" name="myForm" action="home.html" onsubmit="return check()" method="post"
@@ -37,7 +50,7 @@
                 <input id="password" type="password" name="password" placeholder="סיסמא" required>
                 <br />
 
-                <button id="submit" onclick="change_page('loging_page','main_template')">התחבר </button>
+                <button id="submit" onclick="change_page('loging_page','libary_template')">התחבר </button>
                 <br />
                 <button id="submit" onclick="change_page('login_page','joining_template')">אין לי חשבון,אני רוצה
                     להירשם</button>
@@ -49,6 +62,12 @@
     <!---------------------------------------joining TAMPLATE----------------------------------->
     <template id="joining_template" href="#joining_template">
         <div id="joining_page" class="page">
+
+            <div class="libary_header">
+                <img id="image" src="image\libary simbol.jpeg" alt="load page">
+                <h1 id="header">Jerusalem Library</h1>
+                <img id="image" src="image\library_logo.png">
+            </div>
             <h1>משתמש חדש</h1>
 
             <form class="Contact" name="myForm" method="post" action="home.html" onsubmit="return myFunction();"
@@ -62,7 +81,7 @@
                 <input id="password2" type="password" name="password2" placeholder="אימות סיסמא" required>
                 <br />
 
-                <button id="submit" onclick="change_page('joining_page','main_template')">הרשמה</button>
+                <button id="submit" onclick="validation_user_FAJAX()">הרשמה</button>
                 <br />
 
                 <button id="submit" onclick="change_page('joining_page','login_template')">יש לי חשבון,אני רוצה
@@ -71,7 +90,7 @@
         </div>
     </template>
 
-    <!---------------------------------------joining TAMPLATE----------------------------------->
+    <!--------------------------------------- TAMPLATE----------------------------------->
     <template id="main_template" href="#main_template">
         <div id="main_page" class="page">
             <h1>ברוך הבא</h1>
@@ -96,6 +115,7 @@
                 <a href="form.html" class="libary_button" target="iframe_content"><img class="icon1"
                         src="image\phone-call.png" alt="connect"> Contact Us</a>
             </div>
+
 
             <nav class="libary_menu_content">
                 <a onclick="change_iframe('openHour_template')" target="iframe_content" class="libary_button">
