@@ -1,0 +1,62 @@
+@font-face {
+    font-family: hebrowFont;
+    src: url("SEGOEUI.TTF");
+  }
+  
+#catalog_page{
+      max-width: 1000px;
+      font-family: Garamond, Verdana, sans-serif;
+      height: 100%;
+      width: 100%;   
+      background-color:aliceblue; 
+      display: grid;
+      grid-template-areas: 
+      "h h h h h h"
+      "c c c c c c";
+  }
+  
+#h1_catalog {
+      grid-area: h;
+      font-size: 50px;
+      text-align: center;
+      padding-top: 20px; 
+}
+  
+  
+.all_catalog{
+      grid-area: c;
+      max-width: 1000px;
+      display: flex;
+      flex-direction: row;
+      flex-basis: 50%;
+      justify-content: space-between;
+      flex-wrap:wrap;
+      align-content: center;
+      text-align: center;
+  
+  }
+  
+  
+.cl:hover {
+      background:rgb(204, 226, 244)  ;
+  }
+  
+.catalog_ima{
+    flex-basis: 50%;
+
+    height: auto;
+    width: auto;
+      display: flex;
+
+  }
+  
+  .cl {
+      width: 200px;
+      text-decoration: none; 
+  }
+  
+  .catalog_h3_h4 {
+      font-family: hebrowFont;
+      font-weight: bold;
+  }
+  

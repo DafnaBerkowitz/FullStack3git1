@@ -2,6 +2,11 @@
 var firstPage=document.getElementById("home_template");
 var clon= firstPage.content.cloneNode(true);
 document.body.appendChild(clon);
+var ifram1=document.getElementById("picture_libary_template");
+var clon= newP.content.cloneNode(true);
+const iframe = document.querySelector('iframe');
+iframe.srcdoc = clon.lastElementChild.innerHTML;
+
 
 // The main function. Reference to fill page functions.
 function change_page(old_page,new_page){
@@ -28,9 +33,8 @@ function poppin(ev){
     document.body.appendChild(clon); 
 }
 
-function help(){
-   /// const templateContent = document.querySelector('#catalog_template').content;
-    var newP=document.getElementById("catalog_template");
+function change_iframe(id_new){
+    var newP=document.getElementById(id_new);
     var clon= newP.content.cloneNode(true);
     const iframe = document.querySelector('iframe');
     iframe.srcdoc = clon.lastElementChild.innerHTML;

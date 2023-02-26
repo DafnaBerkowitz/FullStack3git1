@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="libary_design.css">
+    <link rel="stylesheet" href="catalog_libary_design.css">
+
     <title>SPA example</title>
 </head>
 
@@ -83,114 +85,189 @@
             <div class="libary_header">
                 <img id="image" src="image\libary simbol.jpeg" alt="load page">
                 <h1 id="header">Jerusalem Library</h1>
-                <img id="image" src="image\library_logo.png">                
-            </div> 
-             <div class="libary_menubar">
-                <a href="index.html" target="_self" class="libary_button"><img class="icon1" src="image\home.png" alt="home"> Home</a>
-                <a href="form.html" class="libary_button" target="iframe_content"><img class="icon1" src="image\phone-call.png" alt="connect" > Contact Us</a>           
+                <img id="image" src="image\library_logo.png">
             </div>
-        
+            <div class="libary_menubar">
+                <a href="index.html" target="_self" class="libary_button"><img class="icon1" src="image\home.png"
+                        alt="home"> Home</a>
+                <a href="form.html" class="libary_button" target="iframe_content"><img class="icon1"
+                        src="image\phone-call.png" alt="connect"> Contact Us</a>
+            </div>
+
             <nav class="libary_menu_content">
-                <a href="open_hour.html" src="catalog_template" class="libary_button">
+                <a onclick="change_iframe('openHour_template')"  target="iframe_content" class="libary_button">
                     <img class="icon" src="image\clock.png" alt="opening hours">
                     <h2>Opening hours</h2>
                 </a>
-                <a onclick="help()" target="iframe_content" class="libary_button">
+                <a onclick="change_iframe('catalog_template')" target="iframe_content" class="libary_button">
                     <img class="icon" src="image\book.png" alt="library catalog">
                     <h2>Catalog's labary</h2>
                 </a>
-                <a href="events.html" target="iframe_content" class="libary_button">
+                <a onclick="change_iframe('event_template')" target="iframe_content" class="libary_button">
                     <img class="icon" src="image\calendar.png" alt="calender">
                     <h2>Events calendar</h2>
                 </a>
-                <a href="video.html" class="libary_button" target="iframe_content">
+                <a onclick="change_iframe('video_template')" class="libary_button" target="iframe_content">
                     <img class="icon" src="image\video.png" alt="video">
                     <h2>Video</h2>
                 </a>
             </nav>
 
-            <iframe src="image\background.png"  class="libary_iframe_content" name="iframe_content" frameborder="0"></iframe>
+            <iframe  class="libary_iframe_content" name="iframe_content"
+                frameborder="0"></iframe>
         </div>
 
     </template>
 
-     <!---------------------------------------CATALOG LIBARY TAMPLATE----------------------------------->
-     <template id="catalog_template" href="#libary_template">
+    <!---------------------------------------CATALOG LIBARY TAMPLATE----------------------------------->
+    <template id="catalog_template" href="#libary_catalog_template">
         <div id="catalog_page" class="page">
- 
-            <h1>Welcome To Our Digital Catalog Library</h1>  
+
+            <h1 id="h1_catalog">Welcome To Our Digital Catalog Library</h1>
 
             <div class="all_catalog">
-                <a href="https://www.e-vrit.co.il/Product/26728/%D7%92%D7%9D_%D7%9C%D7%A0%D7%95_%D7%99%D7%94%D7%99%D7%95_%D7%A4%D7%A8%D7%97%D7%99%D7%9D" target="_blank" class="cl">
-                    <img class="ima" src="image\catalog\גם לנו יהיו פרחים.png" alt="unknown problem">
-                    <h3>גם לנו יהיו פרחים</h3>
-                    <h4>פאם גנוף</h4>
+                <a href="https://www.e-vrit.co.il/Product/26728/%D7%92%D7%9D_%D7%9C%D7%A0%D7%95_%D7%99%D7%94%D7%99%D7%95_%D7%A4%D7%A8%D7%97%D7%99%D7%9D"
+                    target="_blank" class="cl">
+                    <img class="catalog_ima" src="image\catalog\גם לנו יהיו פרחים.png" alt="unknown problem">
+                    <h3 class="catalog_h3_h4">גם לנו יהיו פרחים</h3>
+                    <h4 class="catalog_h3_h4">פאם גנוף</h4>
                 </a>
-                <a href="https://www.e-vrit.co.il/Product/26370/%D7%A9%D7%91%D7%A2_%D7%94%D7%90%D7%97%D7%99%D7%95%D7%AA_7_%D7%94%D7%90%D7%97%D7%95%D7%AA_%D7%94%D7%97%D7%A1%D7%A8%D7%94" target="_blank" class="cl">
-                    <img class="ima" src="image\catalog\האחות החסרה.png" alt="unknown problem">
-                    <h3>האחות החסרה</h3>
-                    <h4>לוסינדה ריילי</h4>
+                <a href="https://www.e-vrit.co.il/Product/26370/%D7%A9%D7%91%D7%A2_%D7%94%D7%90%D7%97%D7%99%D7%95%D7%AA_7_%D7%94%D7%90%D7%97%D7%95%D7%AA_%D7%94%D7%97%D7%A1%D7%A8%D7%94"
+                    target="_blank" class="cl">
+                    <img class="catalog_ima" src="image\catalog\האחות החסרה.png" alt="unknown problem">
+                    <h3 class="catalog_h3_h4">האחות החסרה</h3>
+                    <h4 class="catalog_h3_h4">לוסינדה ריילי</h4>
                 </a>
-                <a href="https://www.e-vrit.co.il/Product/18533/%D7%94%D7%90%D7%A8%D7%99%D7%95%D7%AA_%D7%9E%D7%A1%D7%99%D7%A6%D7%99%D7%9C%D7%99%D7%94" target="_blank" class="cl">
-                    <img class="ima" src="image\catalog\האריות מסיציליה.png" alt="unknown problem">
-                    <h3>האריות מסיציליה</h3>
-                    <h4>סטפניה אאוצי</h4>
+                <a href="https://www.e-vrit.co.il/Product/18533/%D7%94%D7%90%D7%A8%D7%99%D7%95%D7%AA_%D7%9E%D7%A1%D7%99%D7%A6%D7%99%D7%9C%D7%99%D7%94"
+                    target="_blank" class="cl">
+                    <img class="catalog_ima" src="image\catalog\האריות מסיציליה.png" alt="unknown problem">
+                    <h3 class="catalog_h3_h4">האריות מסיציליה</h3>
+                    <h4 class="catalog_h3_h4">סטפניה אאוצי</h4>
                 </a>
-                <a href="https://www.e-vrit.co.il/Product/25714/%D7%94%D7%97%D7%95%D7%A8%D7%A3_%D7%A9%D7%9C_%D7%94%D7%90%D7%A8%D7%99%D7%95%D7%AA" target="_blank" class="cl">
-                    <img class="ima" src="image\catalog\החורף של האריות.png" alt="unknown problem">
-                    <h3>החורף של האריות</h3>
-                    <h4>סטפניה אאוצי</h4>
+                <a href="https://www.e-vrit.co.il/Product/25714/%D7%94%D7%97%D7%95%D7%A8%D7%A3_%D7%A9%D7%9C_%D7%94%D7%90%D7%A8%D7%99%D7%95%D7%AA"
+                    target="_blank" class="cl">
+                    <img class="catalog_ima" src="image\catalog\החורף של האריות.png" alt="unknown problem">
+                    <h3 class="catalog_h3_h4">החורף של האריות</h3>
+                    <h4 class="catalog_h3_h4">סטפניה אאוצי</h4>
                 </a>
-                <a href="https://www.e-vrit.co.il/Product/26937/%D7%94%D7%A9%D7%99%D7%91%D7%94_%D7%9E%D7%94%D7%95%D7%9C%D7%A0%D7%93" target="_blank" class="cl">
-                    <img class="ima" src="image\catalog\השיבה מהולנד.png" alt="unknown problem">
-                    <h3>השיבה מהולנד</h3>
-                    <h4>פול ואלרי</h4>
+                <a href="https://www.e-vrit.co.il/Product/26937/%D7%94%D7%A9%D7%99%D7%91%D7%94_%D7%9E%D7%94%D7%95%D7%9C%D7%A0%D7%93"
+                    target="_blank" class="cl">
+                    <img class="catalog_ima" src="image\catalog\השיבה מהולנד.png" alt="unknown problem">
+                    <h3 class="catalog_h3_h4">השיבה מהולנד</h3>
+                    <h4 class="catalog_h3_h4">פול ואלרי</h4>
                 </a>
-                <a  href="https://www.e-vrit.co.il/Product/27075/%D7%98%D7%91%D7%A2%D7%9D_%D7%A9%D7%9C_%D7%94%D7%93%D7%91%D7%A8%D7%99%D7%9D_%D7%94%D7%A9%D7%91%D7%99%D7%A8%D7%99%D7%9D" target="_blank" class="cl">
-                    <img class="ima" src="image\catalog\טבעם של הדברים השבירים.png" alt="unknown problem">
-                    <h3>טבעם של הדברים השבירים</h3>
-                    <h4>סוזן מייסנר</h4>
+                <a href="https://www.e-vrit.co.il/Product/27075/%D7%98%D7%91%D7%A2%D7%9D_%D7%A9%D7%9C_%D7%94%D7%93%D7%91%D7%A8%D7%99%D7%9D_%D7%94%D7%A9%D7%91%D7%99%D7%A8%D7%99%D7%9D"
+                    target="_blank" class="cl">
+                    <img class="catalog_ima" src="image\catalog\טבעם של הדברים השבירים.png" alt="unknown problem">
+                    <h3 class="catalog_h3_h4">טבעם של הדברים השבירים</h3>
+                    <h4 class="catalog_h3_h4">סוזן מייסנר</h4>
                 </a>
-                <a href="https://www.e-vrit.co.il/Product/26361/%D7%9B%D7%A1%D7%A3_%D7%98%D7%95%D7%91" target="_blank" class="cl">
-                    <img class="ima" src="image\catalog\כסף טוב.png" alt="unknown problem">
-                    <h3>כסף טוב</h3>
-                    <h4>שאול אמסטרמסדקי</h4>
+                <a href="https://www.e-vrit.co.il/Product/26361/%D7%9B%D7%A1%D7%A3_%D7%98%D7%95%D7%91" target="_blank"
+                    class="cl">
+                    <img class="catalog_ima" src="image\catalog\כסף טוב.png" alt="unknown problem">
+                    <h3 class="catalog_h3_h4">כסף טוב</h3>
+                    <h4 class="catalog_h3_h4">שאול אמסטרמסדקי</h4>
                 </a>
-                <a  href="https://www.e-vrit.co.il/Product/26742/%D7%9C%D7%A4%D7%A0%D7%99_%D7%A9%D7%A8%D7%90%D7%99%D7%AA%D7%99_%D7%90%D7%95%D7%AA%D7%9A" target="_blank" class="cl">
-                    <img class="ima" src="image\catalog\לפני שראיתי אותך.png" alt="unknown problem">
-                    <h3>לפני שראיתי אותך</h3>
-                    <h4>אמילי הוטון</h4>
+                <a href="https://www.e-vrit.co.il/Product/26742/%D7%9C%D7%A4%D7%A0%D7%99_%D7%A9%D7%A8%D7%90%D7%99%D7%AA%D7%99_%D7%90%D7%95%D7%AA%D7%9A"
+                    target="_blank" class="cl">
+                    <img class="catalog_ima" src="image\catalog\לפני שראיתי אותך.png" alt="unknown problem">
+                    <h3 class="catalog_h3_h4">לפני שראיתי אותך</h3>
+                    <h4 class="catalog_h3_h4">אמילי הוטון</h4>
                 </a>
-                <a  href="https://www.e-vrit.co.il/Product/18848/%D7%A1%D7%95%D7%93%D7%95%D7%AA_%D7%91%D7%99%D7%AA_%D7%94%D7%A9%D7%9E%D7%A4%D7%A0%D7%99%D7%94" target="_blank" class="cl">
-                    <img class="ima" src="image\catalog\סודות בית השמפניה.png" alt="unknown problem">
-                    <h3>סודות בית השמפניה</h3>
-                    <h4>קריסטין הרמל</h4>
+                <a href="https://www.e-vrit.co.il/Product/18848/%D7%A1%D7%95%D7%93%D7%95%D7%AA_%D7%91%D7%99%D7%AA_%D7%94%D7%A9%D7%9E%D7%A4%D7%A0%D7%99%D7%94"
+                    target="_blank" class="cl">
+                    <img class="catalog_ima" src="image\catalog\סודות בית השמפניה.png" alt="unknown problem">
+                    <h3 class="catalog_h3_h4">סודות בית השמפניה</h3>
+                    <h4 class="catalog_h3_h4">קריסטין הרמל</h4>
                 </a>
-                <a  href="https://www.e-vrit.co.il/Product/24415/%D7%A1%D7%A4%D7%A8_%D7%94%D7%A9%D7%9E%D7%95%D7%AA_%D7%94%D7%90%D7%91%D7%95%D7%93%D7%99%D7%9D" target="_blank" class="cl">
-                    <img class="ima" src="image\catalog\ספר השמות האבודים.png" alt="unknown problem">
-                    <h3>ספר השמות האבודים</h3>
-                    <h4>קריסטין הרמל</h4>
+                <a href="https://www.e-vrit.co.il/Product/24415/%D7%A1%D7%A4%D7%A8_%D7%94%D7%A9%D7%9E%D7%95%D7%AA_%D7%94%D7%90%D7%91%D7%95%D7%93%D7%99%D7%9D"
+                    target="_blank" class="cl">
+                    <img class="catalog_ima" src="image\catalog\ספר השמות האבודים.png" alt="unknown problem">
+                    <h3 class="catalog_h3_h4">ספר השמות האבודים</h3>
+                    <h4 class="catalog_h3_h4">קריסטין הרמל</h4>
                 </a>
-                <a  href="https://www.e-vrit.co.il/Product/26715/%D7%A2%D7%A1%D7%A7%D7%AA_%D7%94%D7%93%D7%95%D7%9B%D7%A1%D7%99%D7%AA" target="_blank" class="cl">
-                    <img class="ima" src="image\catalog\עסקת הדוכסית.png" alt="unknown problem">
-                    <h3>עסקת הדוכסית</h3>
-                    <h4>טסה דר</h4>
+                <a href="https://www.e-vrit.co.il/Product/26715/%D7%A2%D7%A1%D7%A7%D7%AA_%D7%94%D7%93%D7%95%D7%9B%D7%A1%D7%99%D7%AA"
+                    target="_blank" class="cl">
+                    <img class="catalog_ima" src="image\catalog\עסקת הדוכסית.png" alt="unknown problem">
+                    <h3 class="catalog_h3_h4">עסקת הדוכסית</h3>
+                    <h4 class="catalog_h3_h4">טסה דר</h4>
                 </a>
-                <a  href="https://www.e-vrit.co.il/Product/27047/%D7%A9%D7%93%D7%A8%D7%AA_%D7%A2%D7%A6%D7%99_%D7%94%D7%AA%D7%A4%D7%95%D7%97" target="_blank" class="cl">
-                    <img class="ima" src="image\catalog\שדרת עצי התפוחים.png" alt="unknown problem">
-                    <h3>שדרת עצי התפוחים</h3>
-                    <h4>סוזן ויגס</h4>
+                <a href="https://www.e-vrit.co.il/Product/27047/%D7%A9%D7%93%D7%A8%D7%AA_%D7%A2%D7%A6%D7%99_%D7%94%D7%AA%D7%A4%D7%95%D7%97"
+                    target="_blank" class="cl">
+                    <img class="catalog_ima" src="image\catalog\שדרת עצי התפוחים.png" alt="unknown problem">
+                    <h3 class="catalog_h3_h4">שדרת עצי התפוחים</h3>
+                    <h4 class="catalog_h3_h4">סוזן ויגס</h4>
                 </a>
-                <a  href="https://www.e-vrit.co.il/Product/26226/%D7%A9%D7%99%D7%A2%D7%95%D7%A8%D7%99%D7%9D_%D7%91%D7%9B%D7%99%D7%9E%D7%99%D7%94" target="_blank" class="cl">
-                    <img class="ima" src="image\catalog\שיעורים בכימיה.png" alt="unknown problem">
-                    <h3>שיעורים בכימיה</h3>
-                    <h4>בוני גרמוס</h4>
+                <a href="https://www.e-vrit.co.il/Product/26226/%D7%A9%D7%99%D7%A2%D7%95%D7%A8%D7%99%D7%9D_%D7%91%D7%9B%D7%99%D7%9E%D7%99%D7%94"
+                    target="_blank" class="cl">
+                    <img class="catalog_ima" src="image\catalog\שיעורים בכימיה.png" alt="unknown problem">
+                    <h3 class="catalog_h3_h4">שיעורים בכימיה</h3>
+                    <h4 class="catalog_h3_h4">בוני גרמוס</h4>
                 </a>
             </div>
-        
-            
+
+
         </div>
     </template>
+        <!---------------------------------------EVENT LIBARY  TAMPLATE----------------------------------->
+        <template id="event_template" href="#libary_event_template">
+            <div id="event_page" class="page">
+                <h1 style="color:red; justify-content: center;   align-content: center; text-align: center;">There are no
+                    upcoming events</h1>
+            </div>
+        </template>
+    <!---------------------------------------PICTURE LIBARY  TAMPLATE----------------------------------->
+    <template id="picture_libary_template" href="#libary_picture_template">
+        <div id="picture_libary_page" class="page">
+            <img src="image\background.png">         
+        </div>
+    </template>
+    <!---------------------------------------OPEN HOUR LIBARY  TAMPLATE----------------------------------->
+    <template id="openHour_template" href="#libary_openHour_template">
+        <div id="openHour_page" class="page">
+            <h1> Opening Hours </h1>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Hours</th>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>10:00 - 19:00</td>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>12:00 - 21:00</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>10:00 - 19:00</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>10:00 - 19:00</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>11:00 - 22:00</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>09:00 - 12:00</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>close</td>
+                </tr>
+            </table>
+        </div>
+    </template>
+        <!---------------------------------------VIDEO LIBARY  TAMPLATE----------------------------------->
+        <template id="video_template" href="#libary_video_template">
+            <div id="video_page" class="page">
+                <h1 style="color:red; justify-content: center;   align-content: center; text-align: center;"> SORRY, the videx libary not work yet</h1>
+            </div>
+        </template>
 
 
 
