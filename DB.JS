@@ -1,9 +1,8 @@
 class DB {
     constructor(){ 
-       localStorage.clear();
+        let libary_book = ["apple", "banana", "orange"];
+       //localStorage.clear();
     }
-
-    
 
     getData(list_name, body) {
         var List_Name = JSON.parse(localStorage.getItem(list_name)) ?? [];
@@ -67,14 +66,10 @@ class DB {
             }
             else {
                 List_Name = List_Name.filter(item => item.name === body.name)
-                window.localStorage.removeItem(list_name);
-                user = {
-                    name: body.name,
-                    password: body.password,
-                }
-                List_Name.push(user);
+                window.localStorage.removeItem(list_name);           
+                List_Name.push(body);
                 window.localStorage.setItem(list_name, JSON.stringify(List_Name));
-                return user;
+                return body;
             }
         }
 
@@ -87,7 +82,7 @@ class DB {
             // setFormMessage(document.querySelector("#login"), "error", "this user not exits");
         }
         else {
-            var jUser = List_Name.find(item => item.name === body.name) ?? null;
+            var jUser = List_Name.find(item => item.name === name) ?? null;
             if (jUser === null) {
                 return false;
                 // setFormMessage(document.querySelector("#login"), "error", "this user not exits");

@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="catalog_libary_design.css">
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="client.css">
     <link rel="stylesheet" href="libary_design.css">
-    <link rel="stylesheet" href="catalog_libary_design.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>SPA example</title>
@@ -44,7 +44,7 @@
             </div>
             <h1>כניסת משתמש</h1>
 
-            <form class="contact" name="myForm" action="home.html" onsubmit="return check()" method="post"
+            <form class="contact" name="myForm"  method="post"
                 autocomplete="on">
 
                 <input id="name" type="text" name="fname" placeholder="שם משתמש" required>
@@ -53,7 +53,7 @@
                 <input id="password" type="password" name="password" placeholder="סיסמא" required>
                 <br />
 
-                <button id="submit" onclick="change_page('loging_page','libary_template')">התחבר </button>
+                <button id="submit" onclick="validationLogin_user_FAJAX()">התחבר </button>
                 <br />
                 <button id="submit" onclick="change_page('login_page','joining_template')">אין לי חשבון,אני רוצה
                     להירשם</button>
@@ -73,7 +73,7 @@
             </div>
             <h1>משתמש חדש</h1>
 
-            <form class="Contact" name="myForm" method="post" action="home.html" onsubmit="return myFunction();"
+            <form class="Contact" name="myForm" method="post" "
                 autocomplete="on">
 
                 <input id="name" type="text" name="fname" placeholder="שם מלא" required>
@@ -84,7 +84,7 @@
                 <input id="password2" type="password" name="password2" placeholder="אימות סיסמא" required>
                 <br />
 
-                <button id="submit" onclick="validation_user_FAJAX()">הרשמה</button>
+                <button id="submit" onclick="validation_Joining_user_FAJAX()">הרשמה</button>
                 <br />
 
                 <button id="submit" onclick="change_page('joining_page','login_template')">יש לי חשבון,אני רוצה
@@ -124,8 +124,6 @@
                         <label class="libary_lableform" id="username"><b>UserName</b></label>
                         <label class="libary_lableform" id="email"><b>Email</b></label>
 
-                        <a href="allScore.html" onclick="window.open(this.href, width=400,height=400)" target="_blank">
-                            <button id="tableb" type="button" class="btn">Table Score</button></a>
                         <button id="closeb" type="button" class="btn" onclick="closeForm()">Close</button>
                         <button id="logb" type="button" class="btn" onclick="logOut()">LogOut</button>
                     </form>
@@ -163,6 +161,24 @@
         <div id="catalog_page" class="page">
 
             <h1 id="h1_catalog">Welcome To Our Digital Catalog Library</h1>
+        <div id="serch_book">   
+            <input type="text"  id="myInput" onkeyup="serch_book()" placeholder="search book.." <i class="fa fa-search" aria-hidden="true"></i>>
+
+            <ul id="myUL">
+              <li><a href="#">גם לנו יהיו פרחים</a></li>
+              <li><a href="#">האחות החסרה</a></li>            
+              <li><a href="#">האריות מסיציליה</a></li>
+              <li><a href="#">החורף של האריות</a></li>           
+              <li><a href="#">השיבה מהולנד</a></li>
+              <li><a href="#">טבעם של הדברים השבירים</a></li>
+              <li><a href="#">כסף טוב</a></li>
+              <li><a href="#">לפני שראיתי אותך</a></li>
+              <li><a href="#">ספר השמות האבודים</a></li>
+              <li><a href="#">סודות בית השמפניה</a></li>
+              <li><a href="#">עסקת הדוכסית</a></li>
+              <li><a href="#">שדרת עצי התפוחים</a></li>
+              <li><a href="#">שיעורים בכימיה</a></li>
+            </ul></div>       
 
             <div class="libary_all_catalog">
                 <a href="https://www.e-vrit.co.il/Product/26728/%D7%92%D7%9D_%D7%9C%D7%A0%D7%95_%D7%99%D7%94%D7%99%D7%95_%D7%A4%D7%A8%D7%97%D7%99%D7%9D"
@@ -319,6 +335,8 @@
     <script src="Server.js"></script>
     <script src="DB.JS"></script>
     <script src="User.js"></script>
+    <script src="Book.js"></script>
+
 
 
 

@@ -1,86 +1,38 @@
-var count = 0;
-let start;
-let timeNow;
-let stopBlocked;
+
 
 /* פונקציית כניסה, מקבלת נתונים מהפורם ועושה בדיקות תקינות לקלט*/
 
-function check() {
+
+function validationLogin_user_FAJAX() {
     let p = document.forms["myForm"]["password"].value;
     let name = document.forms["myForm"]["fname"].value;
-    //var user = JSON.parse(localStorage.getItem(name));
-    user=validation_user_FAJAX(p,name);
-
-    /* בדיקה אם משתמש חסום ואפשר לשחרר את החסימה*/
-    if (user != null) {
-        timeNow = new Date();
-        stopBlocked = new Date(Date.parse(user.stopBlocked));
-        if (user.stopBlocked != null && timeNow > stopBlocked) {
-            user.blocked = 0;
-            localStorage.setItem(user.userName, JSON.stringify(user));
-        }
+    let fxhttp = new FXMLHttpRequest();
+    let user_ = new user(name, p);
+    if (p.length >= 6) {
+        fxhttp.open('GET', "#login_template", true);
+        fxhttp.onload(login_validation);
+        u = JSON.stringify(user_.name)
+        fxhttp.send("users/"+u);
+    }
+    else {
+        alert("סיסמא צריכה להיות באורך 6 תווים לפחות");
+        document.forms["myForm"]["password"].value = "";
+        document.forms["myForm"]["fname"].value = "";
     }
 
-    if (user == null) {
-        alert("שם משתמש לא קיים במערכת. אנא הירשם");
-        return false;
-    } else {
-        if (user.blocked === 1) {
-            alert("המשתמש חסום ");
-            return false;
+    function login_validation() {
+        if (fxhttp.status == '404') {
+            alert("שם משתמש לא קיים במערכת");
+            document.forms["myForm"]["password"].value = "";
+            document.forms["myForm"]["fname"].value = "";
         }
         else {
-            if (count == 3) {
-                user.blocked = 1;
-                start = new Date();
-                start.setTime(start.getTime() + (30 * 1000));
-                console.log("start  " + start);
-                user.stopBlocked = start;
-                console.log("user.stopBlocked   " + user.stopBlocked);
-                localStorage.setItem(user.userName, JSON.stringify(user));
-                count = 0;
-                alert("סיסמא שגויה אנא המתן 30 שניות");
-                return false;
-            } else {
-                if (p != user.password) {
-                    count += 1;
-                    alert("סיסמא שגויה. אנא נסה שוב");
-                    return false;
+            document.cookie = "name=" + "yosi";
+            var y = document.cookie;
 
-                } else {
-                    localStorage.setItem("userNow", name);
-                }
-            }
+            change_page('login_page', 'libary_template');
         }
+
     }
 }
 
-function validation_user_FAJAX(p,name){
-    let fxhttp=new FXMLHttpRequest();
-    let password_ = p;
-    let name_ = name
-    let email_='';
-    const user={
-        name: name_,
-        email: email_,
-        password: password_,
-    }
-
-    fxhttp.open('GET','login_template',true);
-    fxhttp.onload(validation);
-    fxhttp.send('users',JSON.stringify(user));
-
-
-
-}
-function validation(){
-    if(fxhttp.status==404){
-        alert("שם משתמש קיים במערכת, בחר שם אחר");
-    }
-    else{
-
-        //יעביר לדף הבא, 
-        fxhttp.responseText.password===p;
-    }
-    
-}

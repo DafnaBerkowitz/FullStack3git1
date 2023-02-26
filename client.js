@@ -2,10 +2,10 @@
 var firstPage=document.getElementById("home_template");
 var clon= firstPage.content.cloneNode(true);
 document.body.appendChild(clon);
-var ifram1=document.getElementById("picture_libary_template");
-var clon= newP.content.cloneNode(true);
-const iframe = document.querySelector('iframe');
-iframe.srcdoc = clon.lastElementChild.innerHTML;
+books1();
+
+
+
 
 
 // The main function. Reference to fill page functions.
@@ -53,4 +53,47 @@ function logOut(){
 
 //    window.location.href = "sign.html";
 }
+
+function serch_book() {
+    // Declare variables
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('li');
+  
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+
+/*
+function books1(){
+    let book1=new book("גם לנו יהיו פרחים", " פאם גנוף", "image\catalog\גם לנו יהיו פרחים.png");
+    let book2=new book("האחות החסרה", " לןסינדה ריילי", "image\catalog\האחות החסרה.png");
+    let book3=new book("האריות מסיציליה", "סטפני אאוצי", "image\catalog\האריות מסיציליה.png");
+    let book4=new book("החורף של האריות", "סטפני אאוצי", "image\catalog\החורף של האריות.png");
+    let book5=new book("השיבה מהולנד", "פול ואלרי", "image\catalog\השיבה מהולנד.png");
+    let book6=new book("טבעם של הדברים השבירים", "סוזן מייסנר", "image\catalog\טבעם של הדברים השבירים.png");
+    let book7=new book("כסף טוב", "שאול אמסטרמסדקי", "image\catalog\כסף טוב.png");
+    let book8=new book("לפני שראתי אותך", "המילי הוטון", "image\catalog\לפני שראיתי אותך.png");
+    let book9=new book("סודות בית השמפניה", "קריסטין הרמל", "image\catalog\סודות בית השמפניה.png");
+    let book10=new book("עסקת הדוכסית", "טסה דר", "image\catalog\עסקת הדוכסית.png" );
+    let book11=new book("שדרת עצי התפוחים", "סוזן ויגס", "image\catalog\שדרת עצי התפוחים.png");
+    let book12=new book("שיעורים בכימיה", "בוני גרמוס", "image\catalog\שיעורים בכימיה.png");
+    let book13=new book("ספר השמות האבודים", "קריסטין הרמל", "image\catalog\ספר השמות האבודים.png");
+    let books=[book1,book2,book3,book4,book5,book6,book7,book8,book9,book10,book11,book12,book13];
+    window.localStorage.setItem("books",JSON.stringify(books));
+
+
+}
+*/
+
 
