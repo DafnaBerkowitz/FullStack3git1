@@ -55,7 +55,7 @@ class server{
             response= "HTTP1.1 "+"404 "+"Not Found ";
         }
         else{
-            response= "HTTP1.1 "+"200 "+"OK "+'\n'+ JSON.stringify(data);
+            response= "HTTP1.1 "+"200 "+"OK "+'\n'+ data;
         }
         return response;
     }  

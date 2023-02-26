@@ -35,8 +35,22 @@ function poppin(ev){
 
 function change_iframe(id_new){
     var newP=document.getElementById(id_new);
-    var clon= newP.content.cloneNode(true);
+    var clon= newP.content.cloneNode(true); 
     const iframe = document.querySelector('iframe');
     iframe.srcdoc = clon.lastElementChild.innerHTML;
 }
 window.addEventListener('popstate', poppin);
+
+function openForm(){
+    document.getElementById("myForm").style.display = "block";  
+    //document.getElementById('name').innerHTML="Welcome "+currentUser+"!";
+
+}
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+function logOut(){
+
+//    window.location.href = "sign.html";
+}
+

@@ -1,6 +1,9 @@
 class DB {
-    constructor(){}
+    constructor(){ 
+       localStorage.clear();
+    }
 
+    
 
     getData(list_name, body) {
         var List_Name = JSON.parse(localStorage.getItem(list_name)) ?? [];
@@ -28,30 +31,25 @@ class DB {
         }
     }
 
-    addData(list_name, body) { //add users data
+    addData(list_name, user_) { //add users data
         var List_Name = JSON.parse(localStorage.getItem(list_name)) ?? [];
         if (List_Name.length === 0) {
-             user = {
-                name: body.name,
-                password: body.password,
-            }
+            window.localStorage.removeItem(list_name);
+            List_Name.push(user_);
+           window.localStorage.setItem(list_name, JSON.stringify(List_Name));
         }
         else {
-            var jUser = List_Name.find(item => item.name === body.name) ?? null;
+            var jUser = List_Name.find(item => item.name === user_.name) ?? null;
             if (jUser === null) {
-                user = {
-                    name: body.name,
-                    password: body.password,
-                }
+                window.localStorage.removeItem(list_name);
+                List_Name.push(user_);
+                window.localStorage.setItem(list_name, JSON.stringify(List_Name));
             }
             else {
                 return false;
             }
         }
-        window.localStorage.removeItem(list_name);
-        List_Name.push(user);
-        window.localStorage.setItem(list_name, JSON.stringify(List_Name));
-        return user;
+        return user_;
     }
 
 
