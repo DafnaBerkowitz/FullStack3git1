@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="client.css">
     <link rel="stylesheet" href="libary_design.css">
     <link rel="stylesheet" href="catalog_libary_design.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>SPA example</title>
 </head>
@@ -38,7 +39,7 @@
                 <img id="image" src="image\libary simbol.jpeg" alt="load page">
                 <h1 id="header">Jerusalem Library</h1>
                 <img id="image" src="image\library_logo.png">
-            </div> 
+            </div>
             <h1>כניסת משתמש</h1>
 
             <form class="contact" name="myForm" action="home.html" onsubmit="return check()" method="post"
@@ -107,13 +108,15 @@
                 <h1 id="header">Jerusalem Library</h1>
                 <img id="image" src="image\library_logo.png">
 
-                
+
             </div>
             <div class="libary_menubar">
                 <a href="index.html" target="_self" class="libary_button"><img class="icon1" src="image\home.png"
                         alt="home"> Home</a>
                 <a href="form.html" class="libary_button" target="iframe_content"><img class="icon1"
                         src="image\phone-call.png" alt="connect"> Contact Us</a>
+                <button class="libary_personData"><i class="fa fa-user-circle fa-4x" aria-hidden="true"
+                        onclick="openForm()"></i></button>
             </div>
 
 

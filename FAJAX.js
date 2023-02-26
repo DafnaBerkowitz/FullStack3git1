@@ -27,10 +27,10 @@ class FXMLHttpRequest {
   
         let response=  this.network.sendToServer(request);
 
-       let res=response.split('\n');
+        let res=response.split('\n');
         this.status=(res[0].split(' '))[1];
         this.responseText=res[1]; 
-      //  this.callBack();
+        this.callBack();
     }
  
 

@@ -25,6 +25,13 @@ body{
     background-image: linear-gradient(to left, #FFFFFF, #114374, #114374);
 
 }
+.libary_personData {
+
+    position: fixed;
+    top: 35px;
+    right: 35px;
+
+}
 
 .libary_header #image{
     height: 193px;
