@@ -9,7 +9,6 @@ class FXMLHttpRequest {
         this.network=new network();
         this.callBack='';
 
-       // this.addEventListener("load",this.onload);
     }
     open(method,url,async){
         this.method=method;
@@ -25,9 +24,9 @@ class FXMLHttpRequest {
         let request="";
         request=this.method+" /"+ this.url+"/api/ " +api+" HTTP/1.1 "+'\n'+body;
        
-      //  setTimeout(this.network.sendToServer(request),0);
+  
         let response=  this.network.sendToServer(request);
-       // responseFormat(response);
+
        let res=response.split('\n');
         this.status=(res[0].split(' '))[1];
         this.responseText=res[1]; 
