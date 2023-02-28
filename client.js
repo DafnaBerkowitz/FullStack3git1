@@ -37,8 +37,10 @@ window.addEventListener('popstate', poppin);
 
 
 function openForm(){
-    document.getElementById("myForm").style.display = "block";  
-    //document.getElementById('name').innerHTML="Welcome "+currentUser+"!";
+    document.getElementById("myForm").style.display = "block"; 
+    let name= document.cookies;
+    name= name.split('=');
+    document.getElementById('name').innerHTML="Welcome "+name[1]+"!";
 
 }
 function closeForm() {

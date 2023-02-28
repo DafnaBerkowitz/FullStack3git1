@@ -24,7 +24,7 @@ class server{
             case 'GET':{
                 let part=this.api.split('/');
                 if(part.length===2){
-                    data= this.db.getData(part[0],part[1]); //users 1
+                    data= this.db.getData(part[0],JSON.parse(part[1])); //users 1
                 }
                 else{
                     data=this.db.getAllData(part[0]); //users
@@ -37,12 +37,12 @@ class server{
             }
             case 'PUT':{//update data
                 let part=this.api.split('/');
-                data =this.db.updateData(part[0],part[1],body);
+                data =this.db.updateData(part[0],JSON.parse(part[1]),body);
                 break;
             }
             case 'DELETE':{//delete data
                 let part=this.api.split('/');
-                data =this.db.deleteData(part[0],part[1]);
+                data =this.db.deleteData(part[0],JSON.parse(part[1]));
                 break;
             }
             default: {

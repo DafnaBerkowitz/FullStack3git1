@@ -1,6 +1,5 @@
 class DB {
     constructor(){ 
-        let libary_book = ["apple", "banana", "orange"];
        //localStorage.clear();
     }
 
@@ -10,14 +9,17 @@ class DB {
             return false
         }
         else {
-            var jUser = List_Name.find(item => item.name === body.name) ?? null;
+            var jUser = List_Name.find(item => item.name === body) ?? null;
             if (jUser === null) {
                 return false;
             }
             else {
+                document.cookies="currenUser= "+jUser.name;
                 return jUser;
+               
             }
         }
+        
     }
 
     getAllData(list_name) {
@@ -56,13 +58,11 @@ class DB {
         var List_Name = JSON.parse(localStorage.getItem(list_name)) ?? [];
         if (List_Name.length === 0) {
             return false;
-            // setFormMessage(document.querySelector("#login"), "error", "this user not exits");
         }
         else {
             var jUser = List_Name.find(item => item.name === body.name) ?? null;
             if (jUser === null) {
                 return false;
-                // setFormMessage(document.querySelector("#login"), "error", "this user not exits");
             }
             else {
                 List_Name = List_Name.filter(item => item.name === body.name)
@@ -79,13 +79,12 @@ class DB {
         var List_Name = JSON.parse(localStorage.getItem(list_name)) ?? [];
         if (List_Name.length === 0) {
             return false;
-            // setFormMessage(document.querySelector("#login"), "error", "this user not exits");
         }
         else {
             var jUser = List_Name.find(item => item.name === name) ?? null;
             if (jUser === null) {
                 return false;
-                // setFormMessage(document.querySelector("#login"), "error", "this user not exits");
+            
             }
             else {
                 List_Name = List_Name.filter(item => item.name !== name)
