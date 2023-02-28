@@ -1,7 +1,4 @@
-body{
-    height: auto;
-    width: auto;
-}
+
 
 #libary_page{
     font-family: Garamond, Verdana, sans-serif;
@@ -26,7 +23,6 @@ body{
 
 }
 .libary_personData {
-
     position: fixed;
     top: 35px;
     right: 35px;
@@ -64,6 +60,7 @@ body{
   }
 
    
+
 .libary_menu_content{
     display: grid;
     grid-area: m;
@@ -195,5 +192,10 @@ body{
 }
 
 
-   
+.iframe1{
+    display: none;
+}
 
+.active{
+    display: block; 
+}

@@ -2,7 +2,6 @@
 var firstPage=document.getElementById("home_template");
 var clon= firstPage.content.cloneNode(true);
 document.body.appendChild(clon);
-books1();
 
 
 
@@ -33,13 +32,9 @@ function poppin(ev){
     document.body.appendChild(clon); 
 }
 
-function change_iframe(id_new){
-    var newP=document.getElementById(id_new);
-    var clon= newP.content.cloneNode(true); 
-    const iframe = document.querySelector('iframe');
-    iframe.srcdoc = clon.lastElementChild.innerHTML;
-}
+
 window.addEventListener('popstate', poppin);
+
 
 function openForm(){
     document.getElementById("myForm").style.display = "block";  

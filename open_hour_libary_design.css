@@ -1,9 +1,9 @@
-body {
+#openHour_page {
     background: aliceblue;
     font-family: Garamond, Verdana, sans-serif;
 }
 
-h1 {
+#open_h1 {
     font-size: 50px;
     text-align: center;
     padding-top: 20px;
