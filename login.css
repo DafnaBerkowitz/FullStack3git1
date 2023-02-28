@@ -10,6 +10,11 @@
     position: absolute;
      
   }
+  #button, #log, #join, #lib,#catalog_template,#catalog_page{
+    text-align : center ;
+    align-items: center;
+
+  }
   contact{
     height: 400px; 
     width: 200px;

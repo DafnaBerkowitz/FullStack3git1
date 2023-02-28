@@ -37,10 +37,12 @@ function validation_Joining_user_FAJAX() {
             alert("שם משתמש כבר קיים. בחר שם אחר");
         }
         else {
-            document.cookie = "name=" + "yosi";
-            var y= document.cookie;
-
-            change_page('joining_page', 'libary_template');    
+            
+                document.cookie = "name=" + name;
+                var y = document.cookie;
+    
+                change_page('joining_page', 'libary_template');
+                
         }
     
     }

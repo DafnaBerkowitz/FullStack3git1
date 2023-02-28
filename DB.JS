@@ -47,9 +47,11 @@ class DB {
                 window.localStorage.setItem(list_name, JSON.stringify(List_Name));
             }
             else {
-                return false;
+                return false;   
+                
             }
         }
+        document.cookies="currenUser= "+user_.name;
         return user_;
     }
 
@@ -95,6 +97,43 @@ class DB {
         }
     }
     searchData() { }
+    addBook(list_book, book) {
+        var List_book = JSON.parse(localStorage.getItem(list_book)) ?? [];
+        if (List_book.length === 0) {
+            return false
+        }
+        else {
+            var b = List_book.find(item => item.name === book) ?? null;
+            if (b === null) {
+                return false;
+            }
+            else {
+                document.cookies="currenUser= "+jUser.book;
+                return jUser;
+               
+            }
+        }
+        
+    }
+    deleteData(book) {
+        var List_book = JSON.parse(localStorage.getItem(list_book)) ?? [];
+        if (List_Name.length === 0) {
+            return false;
+        }
+        else {
+            var b = List_book.find(item => item.name === book) ?? null;
+            if (b === null) {
+                return false;
+            
+            }
+            else {
+                List_book = List_book.filter(item => item.name !== book)
+                window.localStorage.removeItem(list_book);
+                window.localStorage.setItem(list_book, JSON.stringify(List_book));
+                return true;
+            }
+        }
+    }
 
 
 

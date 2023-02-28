@@ -27,7 +27,7 @@ function validationLogin_user_FAJAX() {
             document.forms["myForm"]["fname"].value = "";
         }
         else {
-            document.cookie = "name=" + "yosi";
+            document.cookie = "name=" + name;
             var y = document.cookie;
 
             change_page('login_page', 'libary_template');

@@ -5,6 +5,28 @@ document.body.appendChild(clon);
 
 
 
+async function picLink(){
+  let book = document.getElementById("hidden");
+  if(book.ariaHidden = true){
+    book.ariaHidden = "false";
+    document.getElementById("b1").innerHTML = "הספר בהשאלה";
+    
+    //addBook();
+    //deleteData();
+
+  }
+  else{
+    alert("הספר בהשאלה ,אנא בחר ספר אחר");
+  }
+               
+}
+
+
+
+
+
+
+
 
 
 // The main function. Reference to fill page functions.
@@ -49,6 +71,7 @@ function closeForm() {
 function logOut(){
 
 //    window.location.href = "sign.html";
+  document.getElementById("logOut").className = "hide";
 }
 
 function serch_book() {

@@ -25,11 +25,12 @@
                 <h1 id="header">Jerusalem Library</h1>
                 <img id="image" src="image\library_logo.png">
             </div>
-
+           <div id="button">
             <h1> WELCOME TO HOME PAGE</h1>
-            <button id="submit" onclick="change_page( 'home_page','login_template')">כניסת משתמש</button>
-            <button id="submit" onclick="change_page( 'home_page','joining_template')">הרשמה</button>
-            <button id="submit" onclick="change_page('home_page','libary_template')">ספריה למחוק</button>
+              <div><button id="submit" onclick="change_page( 'home_page','login_template')">כניסת משתמש</button></div> 
+               <div><button id="submit" onclick="change_page( 'home_page','joining_template')">הרשמה</button></div>
+            </div>
+            
 
         </div>
     </template>
@@ -42,6 +43,7 @@
                 <h1 id="header">Jerusalem Library</h1>
                 <img id="image" src="image\library_logo.png">
             </div>
+            <div id= log>
             <h1>כניסת משתמש</h1>
 
             <form class="contact" name="myForm" method="post" autocomplete="on">
@@ -58,6 +60,7 @@
                     להירשם</button>
 
             </form>
+        </div>
 
         </div>
     </template>
@@ -70,9 +73,10 @@
                 <h1 id="header">Jerusalem Library</h1>
                 <img id="image" src="image\library_logo.png">
             </div>
+            <div id="join">
             <h1>משתמש חדש</h1>
 
-            <form class="Contact" name="myForm" method="post" "
+            <form class="Contact" name="myForm" method="post" 
                 autocomplete=" on">
 
                 <input id="name" type="text" name="fname" placeholder="שם מלא" required>
@@ -90,15 +94,9 @@
                     להתחבר</button>
             </form>
         </div>
-    </template>
-
-    <!--------------------------------------- TAMPLATE----------------------------------->
-    <template id="main_template" href="#main_template">
-        <div id="main_page" class="page">
-            <h1>ברוך הבא</h1>
-            <button id="submit" onclick="change_page('main_page','home_template')">התנתק</button>
         </div>
     </template>
+
 
     <!---------------------------------------LIBARY TAMPLATE----------------------------------->
     <template id="libary_template" href="#libary_template">
@@ -120,8 +118,8 @@
                 <form action="/action_page.php" class="libary_form-container">
                     <h1 id="name">WELCOME</h1>
                     <h3>Personal Data:</h3>
-                    <label class="libary_lableform" id="username"><b>UserName</b></label>
-                    <label class="libary_lableform" id="email"><b>Email</b></label>
+                    <label class="libary_lableform" id="book"><b>used book:</b></label>
+                    
 
                     <button id="closeb" type="button" class="btn" onclick="closeForm()">Close</button>
                     <button id="logb" type="button" class="btn" onclick="logOut()">LogOut</button>
@@ -187,16 +185,16 @@
                     <button id="logb" type="button" class="btn" onclick="logOut()">LogOut</button>
                 </form>
             </div>
-
+           <div id="lib">
             <h1 id="h1_catalog">Welcome To Our Digital Catalog Library</h1>
             <div class="libary_all_catalog">
                 <div>
                     <a href="https://www.e-vrit.co.il/Product/26728/%D7%92%D7%9D_%D7%9C%D7%A0%D7%95_%D7%99%D7%94%D7%99%D7%95_%D7%A4%D7%A8%D7%97%D7%99%D7%9D"
                         target="_blank" class="cl">
                         <img class="catalog_ima" src="image\catalog\גם לנו יהיו פרחים.png" alt="unknown problem"> </a>
-                        <a onclick="" ><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         <h3 class="catalog_h3_h4">גם לנו יהיו פרחים</h3>
                         <h4 class="catalog_h3_h4">פאם גנוף</h4>
+                        <button  id="b1" onclick="picLink()" ><i class="pic"  id="hidden" aria-hidden="true"></i>הוספה</button>
 
 
                 </div>
@@ -297,6 +295,7 @@
 
                 </div>
             </div>
+        </div>
 
     </template>
     <!---------------------------------------EVENT LIBARY  TAMPLATE----------------------------------->
