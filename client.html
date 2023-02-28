@@ -151,7 +151,8 @@
             </nav>
 
 
-            <iframe class="libary_iframe_content" name="iframe_content" frameborder="0" src="image\background.png"></iframe>
+            <iframe class="libary_iframe_content" name="iframe_content" frameborder="0"
+                src="image\background.png"></iframe>
 
 
         </div>
@@ -168,6 +169,24 @@
                 <img id="image" src="image\libary simbol.jpeg" alt="load page">
                 <h1 id="header">Jerusalem Library</h1>
                 <img id="image" src="image\library_logo.png">
+            </div>
+            <div id="catalogmenue" class="libary_menubar">
+                <a onclick="change_page('catalog_page','libary_template')" class="libary_button"><img class="icon1"
+                        src="image\home.png" alt="home"> Home</a>
+                <button class="libary_personData"><i class="fa fa-user-circle fa-4x" aria-hidden="true"
+                        onclick="openForm()"></i></button>
+
+                <div class="libary_form-popup" id="myForm">
+                    <form action="/action_page.php" class="libary_form-container">
+                        <h1 id="name">WELCOME</h1>
+                        <h3>Personal Data:</h3>
+                        <label class="libary_lableform" id="username"><b>UserName</b></label>
+                        <label class="libary_lableform" id="email"><b>Email</b></label>
+
+                        <button id="closeb" type="button" class="btn" onclick="closeForm()">Close</button>
+                        <button id="logb" type="button" class="btn" onclick="logOut()">LogOut</button>
+                    </form>
+                </div>
             </div>
             <h1 id="h1_catalog">Welcome To Our Digital Catalog Library</h1>
             <div class="libary_all_catalog">
@@ -254,6 +273,18 @@
     <!---------------------------------------EVENT LIBARY  TAMPLATE----------------------------------->
     <template id="event_template" href="#libary_event_template">
         <div id="event_page" class="page">
+            <div id="catalogmenue" class="libary_menubar">
+                <a onclick="change_page('catalog_page','libary_template')" class="libary_button"><img class="icon1"
+                        src="image\home.png" alt="home"> Home</a>
+                <button class="libary_personData"><i class="fa fa-user-circle fa-4x" aria-hidden="true"
+                        onclick="openForm()"></i></button>
+            </div>
+            <div id="headercatalog" class="libary_header">
+                <img id="image" src="image\libary simbol.jpeg" alt="load page">
+                <h1 id="header">Jerusalem Library</h1>
+                <img id="image" src="image\library_logo.png">
+            </div>
+           
             <h1 style="color:red; justify-content: center;   align-content: center; text-align: center;">There are no
                 upcoming events</h1>
         </div>
@@ -262,6 +293,18 @@
     <!---------------------------------------OPEN HOUR LIBARY  TAMPLATE----------------------------------->
     <template id="openHour_template" href="#libary_openHour_template">
         <div id="openHour_page" class="page">
+            <div  class="libary_menubar">
+                <a onclick="change_page('catalog_page','libary_template')" class="libary_button"><img class="icon1"
+                        src="image\home.png" alt="home"> Home</a>
+                <button class="libary_personData"><i class="fa fa-user-circle fa-4x" aria-hidden="true"
+                        onclick="openForm()"></i></button>
+            </div>
+            <div id="headercatalog" class="libary_header">
+                <img id="image" src="image\libary simbol.jpeg" alt="load page">
+                <h1 id="header">Jerusalem Library</h1>
+                <img id="image" src="image\library_logo.png">
+            </div>
+         
             <h1 id="open_h1"> Opening Hours </h1>
             <table>
                 <tr>
@@ -302,6 +345,18 @@
     <!---------------------------------------VIDEO LIBARY  TAMPLATE----------------------------------->
     <template id="video_template" href="#libary_video_template">
         <div id="video_page" class="page">
+            <div id="catalogmenue" class="libary_menubar">
+                <a onclick="change_page('catalog_page','libary_template')" class="libary_button"><img class="icon1"
+                        src="image\home.png" alt="home"> Home</a>
+                <button class="libary_personData"><i class="fa fa-user-circle fa-4x" aria-hidden="true"
+                        onclick="openForm()"></i></button>
+            </div>
+            <div id="headercatalog" class="libary_header">
+                <img id="image" src="image\libary simbol.jpeg" alt="load page">
+                <h1 id="header">Jerusalem Library</h1>
+                <img id="image" src="image\library_logo.png">
+            </div>
+           
             <h1 style="color:red; justify-content: center;   align-content: center; text-align: center;"> sorry, the
                 videx libary not work yet</h1>
         </div>

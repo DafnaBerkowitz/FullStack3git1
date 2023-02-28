@@ -4,13 +4,13 @@
   }
   
   #catalog_page{
-      max-width: 1000px;
       font-family: Garamond, Verdana, sans-serif;
       height: 100%;
       width: 100%;   
       background-color:aliceblue; 
       display: grid;
       grid-template-areas: 
+      "f f f f f f"
       "n n n n n n"
       "h h h h h h"
       "c c c c c c";
@@ -19,6 +19,9 @@
   #headercatalog{
     grid-area: n;
 
+  }
+  #catalogmenue{
+    grid-area: f ;
   }
   #h1_catalog {
       grid-area: h;
