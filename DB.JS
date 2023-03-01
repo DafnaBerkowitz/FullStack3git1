@@ -1,6 +1,21 @@
 class DB {
-    constructor(){ 
-       //localStorage.clear();
+    static instance = null;
+    constructor() {
+        if (DB.instance !== null) {
+            return DB.instance;
+        }
+
+        var List_Name = JSON.parse(localStorage.getItem('users')) ?? [];
+        var List_=[];
+        if (List_Name.length !== 0) {
+            for (const user_ in List_Name) {
+                let copyuser = new user(List_Name[user_].name, List_Name[user_].password);
+                List_.push(copyuser);
+            }
+            window.localStorage.setItem('users', JSON.stringify(List_));
+        }
+        DB.instance = this;
+        return DB.instance;
     }
 
     getData(list_name, body) {
@@ -14,12 +29,12 @@ class DB {
                 return false;
             }
             else {
-               
+
                 return jUser;
-               
+
             }
         }
-        
+
     }
 
     getAllData(list_name) {
@@ -35,9 +50,8 @@ class DB {
     addData(list_name, user_) { //add users data
         var List_Name = JSON.parse(localStorage.getItem(list_name)) ?? [];
         if (List_Name.length === 0) {
-            window.localStorage.removeItem(list_name);
             List_Name.push(user_);
-           window.localStorage.setItem(list_name, JSON.stringify(List_Name));
+            window.localStorage.setItem(list_name, JSON.stringify(List_Name));
         }
         else {
             var jUser = List_Name.find(item => item.name === user_.name) ?? null;
@@ -47,35 +61,49 @@ class DB {
                 window.localStorage.setItem(list_name, JSON.stringify(List_Name));
             }
             else {
-                return false;   
-                
+                return false;
+
             }
         }
-        document.cookies="currenUser= "+user_.name;
         return user_;
     }
 
 
-    updateData(list_name, body) {//update user
+    userAddBook(list_name, name, body) {//update user
         var List_Name = JSON.parse(localStorage.getItem(list_name)) ?? [];
         if (List_Name.length === 0) {
             return false;
         }
         else {
-            var jUser = List_Name.find(item => item.name === body.name) ?? null;
+            var jUser = List_Name.find(item => item.name === name) ?? null;
             if (jUser === null) {
                 return false;
             }
             else {
-                List_Name = List_Name.filter(item => item.name === body.name)
-                window.localStorage.removeItem(list_name);           
-                List_Name.push(body);
-                window.localStorage.setItem(list_name, JSON.stringify(List_Name));
-                return body;
-            }
-        }
+                if (jUser.book.length < 3) {
+                    var Books = JSON.parse(localStorage.getItem('books')) ?? [];
+                    var book = Books.find(item => item.name === body) ?? null;
+                    var juserBook= jUser.book.find(item=>item.name===body) ?? null;
 
+                    if (book && !juserBook) {
+                        jUser.book.push(book);
+                        List_Name = List_Name.filter(item => item.name !== name);
+                        window.localStorage.removeItem(list_name);
+                        List_Name.push(jUser);
+                        window.localStorage.setItem(list_name, JSON.stringify(List_Name));
+                        return JSON.stringify(jUser);
+                    }
+                }
+                else {
+                    return false;
+                }
+            }
+
+        }
     }
+
+
+
 
     deleteData(name) {
         var List_Name = JSON.parse(localStorage.getItem(list_name)) ?? [];
@@ -86,7 +114,7 @@ class DB {
             var jUser = List_Name.find(item => item.name === name) ?? null;
             if (jUser === null) {
                 return false;
-            
+
             }
             else {
                 List_Name = List_Name.filter(item => item.name !== name)
@@ -96,7 +124,8 @@ class DB {
             }
         }
     }
-    searchData() { }
+
+
     addBook(list_book, book) {
         var List_book = JSON.parse(localStorage.getItem(list_book)) ?? [];
         if (List_book.length === 0) {
@@ -109,10 +138,10 @@ class DB {
             }
             else {
                 return jUser;
-               
+
             }
         }
-        
+
     }
     deleteData(book) {
         var List_book = JSON.parse(localStorage.getItem(list_book)) ?? [];
@@ -123,7 +152,7 @@ class DB {
             var b = List_book.find(item => item.name === book) ?? null;
             if (b === null) {
                 return false;
-            
+
             }
             else {
                 List_book = List_book.filter(item => item.name !== book)

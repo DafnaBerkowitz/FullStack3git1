@@ -37,10 +37,7 @@ function validation_Joining_user_FAJAX() {
             alert("שם משתמש כבר קיים. בחר שם אחר");
         }
         else {
-            document.cookies="currenUser= "+name;
-            
-        
-    
+            document.cookies="currenUser= "+name; 
                 change_page('joining_page', 'libary_template');
                 
         }

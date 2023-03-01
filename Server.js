@@ -11,17 +11,15 @@ class server{
     getRequestFromNet(request){
         let req=request.split('\n');
         let head= req[0].split(' ');
-        let body= req[1].split(' ');
+        let body= req[1];//.split(' ');
 
         this.method=head[0];
         this.url=head[1];
         this.api=head[2];
-        if(this.method==='POST'){
-            this.body=JSON.parse(body[0]);
-        }
+    
         let data='';
         switch(this.method){
-            case 'GET':{
+            case 'GET':{ //get user data
                 let part=this.api.split('/');
                 if(part.length===2){
                     data= this.db.getData(part[0],JSON.parse(part[1])); //users 1
@@ -31,13 +29,13 @@ class server{
                 }
                 break;
             }
-            case 'POST':{//add new data
-                data =this.db.addData( this.api,this.body);
+            case 'POST':{//add new user
+                data =this.db.addData( this.api,JSON.parse(body));
                 break;
             }
-            case 'PUT':{//update data
+            case 'PUT':{//update user book list
                 let part=this.api.split('/');
-                data =this.db.updateData(part[0],JSON.parse(part[1]),body);
+                data =this.db.userAddBook(part[0],head[3],JSON.parse(body));
                 break;
             }
             case 'DELETE':{//delete data
