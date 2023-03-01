@@ -5,12 +5,14 @@ document.body.appendChild(clon);
 
 
 
-async function picLink(nameBook) {
-  //books1();
+async function picLink(nameBook,id) {
+  books1();
   let book = document.getElementById("book_hidden");
-  if (book.ariaHidden = true) {
+   if (book.ariaHidden = true) {
     book.ariaHidden = "false";
-    document.getElementById("b1").innerHTML = "הספר בהשאלה";
+    document.getElementById(id).innerHTML = "הספר בהשאלה";
+    id.style="background-color: rgb(100, 95, 95);"
+    
 
     let name = document.cookies;
     name = name.split('=');
@@ -21,8 +23,7 @@ async function picLink(nameBook) {
     u = JSON.stringify(nameBook)
     name=`${name[1]}`
     fxhttp.send("users/"+name, u);
-    // userAddBook(){
-    //deleteData();
+    
 
     function validate_book() {
       if (fxhttp.status == '404') {

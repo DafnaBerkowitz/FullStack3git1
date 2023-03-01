@@ -66,3 +66,22 @@
     background-color: rgb(100, 95, 95);
     color: blacke;
   }
+  .addbook{
+    margin: 10px;
+    margin-top: 0%;
+    width: auto; 
+    height: auto;
+    font-family:system-ui;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    
+    color: rgb(110, 106, 106);
+    border-color: #503306;
+     
+  }
+  addbook:hover{
+    background-color: rgb(100, 95, 95);
+    color: rgb(241, 237, 237);
+    color: blacke;
+  }
