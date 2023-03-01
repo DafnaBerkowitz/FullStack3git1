@@ -5,8 +5,8 @@ document.body.appendChild(clon);
 
 
 
-async function picLink(){
-  let book = document.getElementById("hidden");
+async function picLink(nameBook){
+  let book = document.getElementById("book_hidden");
   if(book.ariaHidden = true){
     book.ariaHidden = "false";
     document.getElementById("b1").innerHTML = "הספר בהשאלה";
@@ -68,11 +68,7 @@ function openForm(){
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
-function logOut(){
 
-//    window.location.href = "sign.html";
-  document.getElementById("logOut").className = "hide";
-}
 
 function serch_book() {
     // Declare variables

@@ -106,11 +106,7 @@
                 <h1 id="header">Jerusalem Library</h1>
                 <img id="image" src="image\library_logo.png">
             </div>
-            <div class="libary_menubar">
-                <a href="index.html" target="_self" class="libary_button"><img class="icon1" src="image\home.png"
-                        alt="home"> Home</a>
-                <a href="form.html" class="libary_button" target="iframe_content"><img class="icon1"
-                        src="image\phone-call.png" alt="connect"> Contact Us</a>
+            <div class="libary_menubar">              
                 <button class="libary_personData"><i class="fa fa-user-circle fa-4x" aria-hidden="true"
                         onclick="openForm()"></i></button>
             </div>
@@ -122,7 +118,7 @@
                     
 
                     <button id="closeb" type="button" class="btn" onclick="closeForm()">Close</button>
-                    <button id="logb" type="button" class="btn" onclick="logOut()">LogOut</button>
+                    <button id="logb" type="button" class="btn" onclick="change_page('libary_page','home_template')">LogOut</button>
                 </form>
             </div>
 
@@ -194,9 +190,7 @@
                         <img class="catalog_ima" src="image\catalog\גם לנו יהיו פרחים.png" alt="unknown problem"> </a>
                         <h3 class="catalog_h3_h4">גם לנו יהיו פרחים</h3>
                         <h4 class="catalog_h3_h4">פאם גנוף</h4>
-                        <button  id="b1" onclick="picLink()" ><i class="pic"  id="hidden" aria-hidden="true"></i>הוספה</button>
-
-
+                        <button  id="b1" onclick="picLink('גם לנו יהיו פרחים')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>הוספה</button>
                 </div>
                 <div>
                     <a href="https://www.e-vrit.co.il/Product/26370/%D7%A9%D7%91%D7%A2_%D7%94%D7%90%D7%97%D7%99%D7%95%D7%AA_7_%D7%94%D7%90%D7%97%D7%95%D7%AA_%D7%94%D7%97%D7%A1%D7%A8%D7%94"

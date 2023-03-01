@@ -14,7 +14,7 @@ class DB {
                 return false;
             }
             else {
-                document.cookies="currenUser= "+jUser.name;
+               
                 return jUser;
                
             }
@@ -108,7 +108,6 @@ class DB {
                 return false;
             }
             else {
-                document.cookies="currenUser= "+jUser.book;
                 return jUser;
                
             }

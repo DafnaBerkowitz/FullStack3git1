@@ -27,9 +27,8 @@ function validationLogin_user_FAJAX() {
             document.forms["myForm"]["fname"].value = "";
         }
         else {
-            document.cookie = "name=" + name;
-            var y = document.cookie;
-
+         
+            document.cookies="currenUser= "+name;
             change_page('login_page', 'libary_template');
         }
 
