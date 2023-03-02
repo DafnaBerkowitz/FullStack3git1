@@ -6,7 +6,7 @@ document.body.appendChild(clon);
 
 
 async function picLink(nameBook,id) {
-  books1();
+  //books1();
   let book = document.getElementById("book_hidden");
    if (book.ariaHidden = true) {
     book.ariaHidden = "false";
@@ -15,7 +15,7 @@ async function picLink(nameBook,id) {
     
 
     let name = document.cookies;
-    name = name.split('=');
+    name = name.split(/[=,]/);
 
     let fxhttp = new FXMLHttpRequest();
     fxhttp.open('PUT', '#libary_catalog_template', true);
@@ -27,16 +27,14 @@ async function picLink(nameBook,id) {
 
     function validate_book() {
       if (fxhttp.status == '404') {
-        alert("שם משתמש כבר קיים. בחר שם אחר");
+        alert("אין אפשרות להשאיל את הספר, מצטערים");
       }
       else {
         let response=JSON.parse( fxhttp.responseText);
-        let boo1=  response.book[0].name;
-        let boo2=  (response.book[1] ? response.book[1].name : '');
-        let boo3=  (response.book[2] ? response.book[2].name : '');
+        let boo1=  response.book[0].name ? response.book[0].name : ' ';
+        let boo2=  (response.book[1] ? response.book[1].name : ' ');
+        let boo3=  (response.book[2] ? response.book[2].name : ' ');
         document.cookies = "currenUser=" + name + ",book1="+boo1+",book2="+boo2+",book3="+boo3;
-
- 
       }
     
     }
@@ -95,6 +93,9 @@ function openForm() {
   document.getElementById('name').innerHTML = "Welcome " + name[1] + "!";
   document.getElementById('username').innerHTML = "Name: "+ name[1] +'\n';
   document.getElementById('book1').innerHTML = "Book1: "+ name[3] ;
+  document.getElementById('book2').innerHTML = "Book2: "+ name[5] ;
+  document.getElementById('book3').innerHTML = "Book3: "+ name[7] ;
+
 
 
 
