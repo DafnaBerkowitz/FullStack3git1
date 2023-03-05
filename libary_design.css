@@ -90,6 +90,12 @@
     font-size: 30px;
     text-align: center;
 }
+.libary_form-container h1{
+    position:relative;
+    right: 23px;
+    text-align: center;
+    
+}
 
 .libary_menu_content .icon {
     height: 60px;
@@ -113,18 +119,25 @@
     display: none;
     position: fixed;
     top: 30px;
-    right: 30px;
+    right: 10px;
     border: 3px solid #f1f1f1;
     z-index: 100;
+    
     
     }
     
     /* Add styles to the form container */
     .libary_form-container {
-    max-width: 300px;
+        max-width: 400px;
+    box-sizing: border-box;
     padding: 10px;
     background-color: white;
+    text-align: center;
     
+    }
+   
+    .libary_lableform{
+        text-align: center;
     }
     
     /* Full-width input fields */
