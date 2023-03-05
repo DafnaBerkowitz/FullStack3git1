@@ -31,6 +31,10 @@ async function picLink(nameBook, id, id2) {
     function validate_book() {
       if (fxhttp.status == '404') {
         alert("אין אפשרות להשאיל את הספר, מצטערים");
+        document.getElementById(id).className = "visible";
+        document.getElementById(id2).className = "hide";
+
+
       }
       else {
         let response = JSON.parse(fxhttp.responseText);
