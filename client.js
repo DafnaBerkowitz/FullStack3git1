@@ -5,12 +5,14 @@ document.body.appendChild(clon);
 
 
 
-async function picLink(nameBook,id) {
-  //books1();
+async function picLink(nameBook,id,id2) {
+  books1();
   let book = document.getElementById("book_hidden");
    if (book.ariaHidden = true) {
     book.ariaHidden = "false";
     document.getElementById(id).innerHTML = "הספר בהשאלה";
+    document.getElementById(id2).className = "return_book";
+    document.getElementsByClassName(id2).innerHTML ="החזרת ספר";
     id.style="background-color: rgb(100, 95, 95);"
     
 
@@ -48,6 +50,44 @@ async function picLink(nameBook,id) {
   
 
 }
+
+async function picLink2(nameBook,id,id2) {
+  //books1();
+  
+    document.getElementById(id).innerHTML = "הוספה";
+    document.getElementById(id2).className = "hide";
+    let name = document.cookies;
+    name = name.split(/[=,]/);
+
+    let fxhttp = new FXMLHttpRequest();
+    fxhttp.open('DELETE', '#libary_catalog_template', true);
+    fxhttp.onload(validate_book);
+    u = JSON.stringify(nameBook)
+    name=`${name[1]}`
+    fxhttp.send("users/"+name, u);
+    
+
+    function validate_book() {
+      if (fxhttp.status == '404') {
+        alert("אין אפשרות להשאיל את הספר, מצטערים");
+      }
+      else {
+        let response=JSON.parse( fxhttp.responseText);
+        let boo1=  response.book[0].name ? response.book[0].name : ' ';
+        let boo2=  (response.book[1] ? response.book[1].name : ' ');
+        let boo3=  (response.book[2] ? response.book[2].name : ' ');
+        document.cookies = "currenUser=" + name + ",book1="+boo1+",book2="+boo2+",book3="+boo3;
+      }
+    
+    }
+  }
+ 
+
+  
+  
+  
+
+
 
 
 
