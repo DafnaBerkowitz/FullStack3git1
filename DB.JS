@@ -105,60 +105,30 @@ class DB {
 
 
 
-    deleteData(name) {
+ 
+    deleteData(list_name,name,book) {
         var List_Name = JSON.parse(localStorage.getItem(list_name)) ?? [];
         if (List_Name.length === 0) {
             return false;
         }
         else {
-            var jUser = List_Name.find(item => item.name === name) ?? null;
-            if (jUser === null) {
+            var user = List_Name.find(item => item.name === name) ?? null;
+            if (user === null) {
                 return false;
 
             }
             else {
-                List_Name = List_Name.filter(item => item.name !== name)
+               let username=user.name;
+               let userp=user.password;
+               let userbook=user.book.filter(item => item.name !== book);
+
+                user.name=username;
+                user.password=userp;
+                user.book=userbook;
+           
                 window.localStorage.removeItem(list_name);
                 window.localStorage.setItem(list_name, JSON.stringify(List_Name));
-                return true;
-            }
-        }
-    }
-
-
-    addBook(list_book, book) {
-        var List_book = JSON.parse(localStorage.getItem(list_book)) ?? [];
-        if (List_book.length === 0) {
-            return false
-        }
-        else {
-            var b = List_book.find(item => item.name === book) ?? null;
-            if (b === null) {
-                return false;
-            }
-            else {
-                return jUser;
-
-            }
-        }
-
-    }
-    deleteData(book) {
-        var List_book = JSON.parse(localStorage.getItem(list_book)) ?? [];
-        if (List_Name.length === 0) {
-            return false;
-        }
-        else {
-            var b = List_book.find(item => item.name === book) ?? null;
-            if (b === null) {
-                return false;
-
-            }
-            else {
-                List_book = List_book.filter(item => item.name !== book)
-                window.localStorage.removeItem(list_book);
-                window.localStorage.setItem(list_book, JSON.stringify(List_book));
-                return true;
+                return  JSON.stringify(user);
             }
         }
     }

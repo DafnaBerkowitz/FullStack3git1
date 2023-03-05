@@ -40,7 +40,7 @@ class server{
             }
             case 'DELETE':{//delete data
                 let part=this.api.split('/');
-                data =this.db.deleteData(part[0],JSON.parse(part[1]));
+                data =this.db.deleteData(part[0],head[3],JSON.parse(body));
                 break;
             }
             default: {

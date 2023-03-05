@@ -114,18 +114,18 @@
             <div class="libary_form-popup" id="myForm">
                 <form action="/action_page.php" class="libary_form-container">
                     <h1 id="name">WELCOME</h1>
-                    label class="libary_lableform" id="username"><b>UserName:</b></label><br>
+                    <h3>Personal Data:</h3>
+                    <label class="libary_lableform" id="username"><b>UserName:</b></label><br>
                     <h3>Your Books: </h3><br>
                     <label class="libary_lableform" id="book1"></label><br>
                     <label class="libary_lableform" id="book2"></label><br>
                     <label class="libary_lableform" id="book3"></label><br>
-                    
+
 
                     <button id="closeb" type="button" class="btn" onclick="closeForm()">Close</button>
-                    <button id="logb" type="button" class="btn" onclick="change_page('libary_page','home_template')">LogOut</button>
+                    <button id="logb" type="button" class="btn" onclick="logOut()">LogOut</button>
                 </form>
             </div>
-
 
 
             <nav class="libary_menu_content">
@@ -198,7 +198,7 @@
                         <img class="catalog_ima" src="image\catalog\גם לנו יהיו פרחים.png" alt="unknown problem"> </a>
                         <h3 class="catalog_h3_h4">גם לנו יהיו פרחים</h3>
                         <h4 class="catalog_h3_h4">פאם גנוף</h4>
-                        <button  class="addbook" id="b1" onclick="picLink('גם לנו יהיו פרחים','b1','b111')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>הוספה</button>
+                        <button  class="addbook" id="b1" onclick="picLink('גם לנו יהיו פרחים','b1','b111')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>השאלת ספר</button>
                         <button   id="b111" class="hide" onclick="picLink2('גם לנו יהיו פרחים','b1','b111')" >החזרת הספר</button>
                 </div>
                 <div>
@@ -207,7 +207,7 @@
                         <img class="catalog_ima" src="image\catalog\האחות החסרה.png" alt="unknown problem"> </a>
                     <h3 class="catalog_h3_h4">האחות החסרה</h3>
                     <h4 class="catalog_h3_h4">לוסינדה ריילי</h4>
-                    <button class="addbook" id="b2" onclick="picLink('האחות החסרה','b2','b22')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>הוספה</button>
+                    <button class="addbook" id="b2" onclick="picLink('האחות החסרה','b2','b22')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>השאלת ספר</button>
                     <button  id="b22" class="hide" onclick="picLink2('האחות החסרה','b2','b22')" >החזרת הספר</button>
                 </div>
                 <div>
@@ -216,7 +216,7 @@
                         <img class="catalog_ima" src="image\catalog\האריות מסיציליה.png" alt="unknown problem"> </a>
                     <h3 class="catalog_h3_h4">האריות מסיציליה</h3>
                     <h4 class="catalog_h3_h4">סטפניה אאוצי</h4>
-                    <button class="addbook" id="b3" onclick="picLink('האריות מסיציליה','b3','b33')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>הוספה</button>
+                    <button class="addbook" id="b3" onclick="picLink('האריות מסיציליה','b3','b33')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>השאלת ספר</button>
                     <button  id="b33" class="hide" onclick="picLink2('האריות מסיציליה','b3','b33')" >החזרת הספר</button>
                 </div>
                 <div>
@@ -226,7 +226,7 @@
 
                     <h3 class="catalog_h3_h4">החורף של האריות</h3>
                     <h4 class="catalog_h3_h4">סטפניה אאוצי</h4>
-                    <button class="addbook" id="b4" onclick="picLink('החורף של האריות','b4','b14')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>הוספה</button>
+                    <button class="addbook" id="b4" onclick="picLink('החורף של האריות','b4','b14')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>השאלת ספר</button>
                     <button  id="b14" class="hide" onclick="picLink2('החורף של האריות','b4','b14')" >החזרת הספר</button>
                 </div>
                 <div>
@@ -235,7 +235,7 @@
                         <img class="catalog_ima" src="image\catalog\השיבה מהולנד.png" alt="unknown problem"> </a>
                     <h3 class="catalog_h3_h4">השיבה מהולנד</h3>
                     <h4 class="catalog_h3_h4">פול ואלרי</h4>
-                    <button class="addbook"  id="b5" onclick="picLink('השיבה מהולנד','b5','b15')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>הוספה</button>
+                    <button class="addbook"  id="b5" onclick="picLink('השיבה מהולנד','b5','b15')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>השאלת ספר</button>
                     <button  id="b15" class="hide" onclick="picLink2('השיבה מהולנד','b5','b15')" >החזרת הספר</button>
 
                 </div>
@@ -246,7 +246,7 @@
                     </a>
                     <h3 class="catalog_h3_h4">טבעם של הדברים השבירים</h3>
                     <h4 class="catalog_h3_h4">סוזן מייסנר</h4>
-                    <button class="addbook" id="b6" onclick="picLink('טבעם של הדברים השבירים','b6','b16')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>הוספה</button>
+                    <button class="addbook" id="b6" onclick="picLink('טבעם של הדברים השבירים','b6','b16')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>השאלת ספר</button>
                     <button  id="b16" class="hide" onclick="picLink2('טבעם של הדברים השבירים','b6','b16')" >החזרת הספר</button>
 
                 </div>
@@ -256,7 +256,7 @@
                         <img class="catalog_ima" src="image\catalog\כסף טוב.png" alt="unknown problem"></a>
                     <h3 class="catalog_h3_h4">כסף טוב</h3>
                     <h4 class="catalog_h3_h4">שאול אמסטרמסדקי</h4>
-                    <button class="addbook" id="b7" onclick="picLink('כסף טוב','b7','b17')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>הוספה</button>
+                    <button class="addbook" id="b7" onclick="picLink('כסף טוב','b7','b17')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>השאלת ספר</button>
                     <button  id="b17" class="hide" onclick="picLink2('כסף טוב','b7','b17')" >החזרת הספר</button>
 
                 </div>
@@ -266,7 +266,7 @@
                         <img class="catalog_ima" src="image\catalog\לפני שראיתי אותך.png" alt="unknown problem"></a>
                     <h3 class="catalog_h3_h4">לפני שראיתי אותך</h3>
                     <h4 class="catalog_h3_h4">אמילי הוטון</h4>
-                    <button class="addbook" id="b8" onclick="picLink('לפני שראיתי אותך','b8','b18')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>הוספה</button>
+                    <button class="addbook" id="b8" onclick="picLink('לפני שראיתי אותך','b8','b18')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>השאלת ספר</button>
                     <button  id="b18" class="hide" onclick="picLink2('לפני שראיתי אותך','b8','b18')" >החזרת הספר</button>
 
                 </div>
@@ -276,8 +276,8 @@
                         <img class="catalog_ima" src="image\catalog\סודות בית השמפניה.png" alt="unknown problem"></a>
                     <h3 class="catalog_h3_h4">סודות בית השמפניה</h3>
                     <h4 class="catalog_h3_h4">קריסטין הרמל</h4>
-                    <button class="addbook" id="b9" onclick="picLink('סודות בית השמפניה ','b9','b19')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>הוספה</button>
-                    <button  id="b19" class="hide" onclick="picLink2('סודות בית השמפניה ','b9','b19')" >החזרת הספר</button>
+                    <button class="addbook" id="b9" onclick="picLink('סודות בית השמפניה','b9','b19')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>השאלת ספר</button>
+                    <button  id="b19" class="hide" onclick="picLink2('סודות בית השמפניה','b9','b19')" >החזרת הספר</button>
 
                 </div>
                 <div>
@@ -286,8 +286,8 @@
                         <img class="catalog_ima" src="image\catalog\ספר השמות האבודים.png" alt="unknown problem"> </a>
                     <h3 class="catalog_h3_h4">ספר השמות האבודים</h3>
                     <h4 class="catalog_h3_h4">קריסטין הרמל</h4>
-                    <button class="addbook" id="b10" onclick="picLink(' ספר השמות האבודים ','b10','b110')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>הוספה</button>
-                    <button  id="b110" class="hide" onclick="picLink2(' ספר השמות האבודים ','b10','b110')" >החזרת הספר</button>
+                    <button class="addbook" id="b10" onclick="picLink('ספר השמות האבודים','b10','b110')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>השאלת ספר</button>
+                    <button  id="b110" class="hide" onclick="picLink2('ספר השמות האבודים','b10','b110')" >החזרת הספר</button>
 
                 </div>
                 <div>
@@ -296,8 +296,8 @@
                         <img class="catalog_ima" src="image\catalog\עסקת הדוכסית.png" alt="unknown problem"></a>
                     <h3 class="catalog_h3_h4">עסקת הדוכסית</h3>
                     <h4 class="catalog_h3_h4">טסה דר</h4>
-                    <button class="addbook" id="b11" onclick="picLink(' עסקת הדוכסית','b11','b1111')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>הוספה</button>
-                    <button  id="b1111" class="hide" onclick="picLink2(' עסקת הדוכסית','b11','b1111')" >החזרת הספר</button>
+                    <button class="addbook" id="b11" onclick="picLink('עסקת הדוכסית','b11','b1111')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>השאלת ספר</button>
+                    <button  id="b1111" class="hide" onclick="picLink2('עסקת הדוכסית','b11','b1111')" >החזרת הספר</button>
 
                 </div>
                 <div>
@@ -306,8 +306,8 @@
                         <img class="catalog_ima" src="image\catalog\שדרת עצי התפוחים.png" alt="unknown problem"></a>
                     <h3 class="catalog_h3_h4">שדרת עצי התפוחים</h3>
                     <h4 class="catalog_h3_h4">סוזן ויגס</h4>
-                    <button   class="addbook" id="b12" onclick="picLink('  שדרת עצי התפוחים','b12','b112')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>הוספה</button>
-                    <button  id="b112" class="hide" onclick="picLink2('  שדרת עצי התפוחים','b12','b112')" >החזרת הספר</button>
+                    <button   class="addbook" id="b12" onclick="picLink('שדרת עצי התפוחים','b12','b112')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>השאלת ספר</button>
+                    <button  id="b112" class="hide" onclick="picLink2('שדרת עצי התפוחים','b12','b112')" >החזרת הספר</button>
 
                 </div>
                 <div>
@@ -316,7 +316,7 @@
                         <img class="catalog_ima" src="image\catalog\שיעורים בכימיה.png" alt="unknown problem"> </a>
                     <h3 class="catalog_h3_h4">שיעורים בכימיה</h3>
                     <h4 class="catalog_h3_h4">בוני גרמוס</h4>
-                    <button   class="addbook" id="b13" onclick="picLink('שיעורים בכימיה','b13','b113')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>הוספה</button>
+                    <button   class="addbook" id="b13" onclick="picLink('שיעורים בכימיה','b13','b113')" ><i class="pic"  id="book_hidden" aria-hidden="true"></i>השאלת ספר</button>
                     <button  id="b113" class="hide" onclick="picLink2('שיעורים בכימיה','b13','b113')" >החזרת הספר</button>
 
                 </div>
