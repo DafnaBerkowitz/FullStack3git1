@@ -27,15 +27,19 @@
       grid-area: h;
       font-size: 50px;
       text-align: center;
+      align-content: center;
       padding-top: 20px;
+      padding-left: 250px;
   }
   .libary_all_catalog{
       grid-area: c;
-      max-width: 1000px;
+    
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
-      padding: 20px;
+      justify-content: space-around;
+      padding: 40px;
+      padding-left:200px;
+
       flex-wrap: wrap;
       align-content: center;
       text-align: center;
